@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use postgresql as the database for Active Record
@@ -27,7 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -50,9 +49,10 @@ group :development, :test do
   gem 'rubocop'
   gem 'annotate'
   gem 'selenium-webdriver'  # Need firefox for this to work.
-  # gem 'guard'
-  # gem 'guard-rspec'
-  # gem 'guard-bundler', require: false
-  # gem 'terminal-notifier-guard'
-  # gem 'nyan-cat-formatter'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-bundler', require: false
+  gem 'terminal-notifier-guard'
+  gem 'simplecov', '~> 0.7.1', require: false
 end
+
