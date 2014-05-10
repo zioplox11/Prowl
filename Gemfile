@@ -56,3 +56,4 @@ group :development, :test do
   gem 'coveralls'
 end
 
+gem 'rails_12factor', group: :production
