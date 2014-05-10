@@ -17,14 +17,11 @@ ActiveRecord::Schema.define(version: 20140509185202) do
   enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "nickname"
+    t.string   "user_name"
     t.string   "password_digest"
-    t.integer  "height_feet"
-    t.integer  "height_inches"
+    t.integer  "height"
     t.string   "body_type"
-    t.integer  "age"
+    t.date     "birthdate"
     t.string   "email"
     t.boolean  "admin_status",    default: false
     t.datetime "created_at"

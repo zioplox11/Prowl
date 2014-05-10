@@ -11,7 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
-  - assets/application.js
+  - public/javascripts/prowl_main.js
 
 # stylesheets
 #
@@ -25,7 +25,7 @@ src_files:
 #   - stylesheets/*.css
 #
 stylesheets:
-  - assets/application.css
+  - public/style/prowl_style.css
 
 # helpers
 #
