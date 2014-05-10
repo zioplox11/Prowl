@@ -42,7 +42,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'rails-erd'
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails'
   gem 'jasmine'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
@@ -53,6 +53,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-bundler', require: false
   gem 'terminal-notifier-guard'
-  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'coveralls'
 end
 
