@@ -13,7 +13,7 @@ html {
 #main_container {
   border: 2px solid black;
   position: relative;
-  height: 1800px;
+  height: 840px;
   width: 960px;
   margin: 0 auto;
   top: 0px;
@@ -28,6 +28,7 @@ html {
   width: 200px;
   height: 900px;
   margin: 0 auto;
+  display:none;
 }
 
 #left_container{
@@ -38,27 +39,50 @@ html {
   top: 150px;
   height: 900px;
   margin: 0 auto;
+  display:none;
 }
 
 #header {
   border: 2px solid red;
-  display: block;
-  position:relative;
+  position: relative;
   width: 950px;
-  height: 150px;
+  height: 140px;
   margin: 0 auto;
   top: 0px;
+}
+
+#top_header {
+  border: 2px solid gray;
+  position: absolute;
+  display: block;
+  width: 940px;
+  height: 80px;
+  margin: 0 auto;
+  top: 0px;
+  text-align: right;
+}
+
+#sub_header {
+  border: 2px solid yellow;
+  position:relative;
+  display: block;
+  width: 940px;
+  height: 40px;
+  margin: 0 auto;
+  top: 40px;
+  display:none;
 }
 
 #local_users {
   border: 2px solid teal;
   position:relative;
-  display: inline-block;
+/*  display: inline-block;*/
   width: 750px;
   top: 0px;
   left: 0px;
   height: 900px;
   margin: 0 auto;
+  display:none;
 }
 
 .local_user {
@@ -72,58 +96,62 @@ html {
   top: 0px;
 }
 
+#tester{
+  margin: 0 auto;
+  padding: 0;
+}
+
+#signOut{
+  display:none;
+}
+
+#signIn{
+
+}
+
 #place_holder_leftside {
-  border: 2px solid purple;
+/*  border: 2px solid purple;*/
   position: absolute;
   top: 150px;
   left: 10px;
   width: 180px;
   height: 1600px;
   margin: 0 auto;
+  display:none;
 }
 
 #login_signup{
-  border: 8px solid green;
+  border: 1px solid teal;
   position:relative;
   display: inline-block;
-  width: 750px;
+  width: 940px;
   top: 0px;
   left: 0px;
-  height: 600px;
+  height: 520px;
   margin: 0 auto;
-}
-
-
-
-
-#top_header {
-  border: 2px solid gray;
-  position:relative;
-  display: inline-block;
-  width: 950px;
-  height: 80px;
-  margin: 0 auto;
-  top: 0px;
-}
-
-#sub_header {
-  border: 2px solid yellow;
-  position:relative;
-  display: inline-block;
-  width: 950px;
-  height: 60px;
-  margin: 0 auto;
-  top: 0px;
+  text-align: center;
 }
 
 #main_view {
   border: 2px solid yellow;
   position:relative;
-  display: inline-block;
+/*  display: inline-block;*/
   width: 750px;
-  top: 0px;
+  top:0px;
   left: 190px;
-  height: 1600px;
+  height: 640px;
+  margin: 0 auto;
+  display:none;
+}
+
+#main_splash_view{
+  border: 2px solid green;
+  position:relative;
+  display: inline-block;
+  width: 950px;
+  top:0px;
+  left: 0px;
+  height: 640px;
   margin: 0 auto;
 }
 
