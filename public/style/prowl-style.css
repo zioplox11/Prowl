@@ -121,14 +121,15 @@ html {
 }
 
 #login_signup{
-  border: 8px solid green;
+  border: 1px solid teal;
   position:relative;
   display: inline-block;
-  width: 950px;
+  width: 940px;
   top: 0px;
   left: 0px;
   height: 520px;
   margin: 0 auto;
+  text-align: center;
 }
 
 #main_view {
@@ -144,7 +145,7 @@ html {
 }
 
 #main_splash_view{
-  border: 2px solid yellow;
+  border: 2px solid green;
   position:relative;
   display: inline-block;
   width: 950px;
@@ -152,7 +153,6 @@ html {
   left: 0px;
   height: 640px;
   margin: 0 auto;
-
 }
 
 
