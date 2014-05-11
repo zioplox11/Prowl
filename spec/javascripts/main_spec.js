@@ -6,6 +6,6 @@ describe("Hello world", function() {
 
 describe("Hello world part 2", function() {
     it("says hello", function() {
-        expect(helloWorld2()).toEqual("Hello world again!");
+        expect(helloLesbianWorld()).toEqual("Hello Lesbians!");
     });
 });
