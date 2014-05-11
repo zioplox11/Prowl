@@ -1,3 +1,378 @@
-body{
-  background-color: teal;
+html {
+  background: url(../images/test.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+.remember-this-will-NOT-be-read {
+   display: none !important;
+}
+
+#main_container {
+  border: 2px solid black;
+  position: relative;
+  height: 1800px;
+  width: 960px;
+  margin: 0 auto;
+  top: 0px;
+  left: 0px;
+}
+
+#right_container{
+  border: 2px solid green;
+  position: fixed;
+  top: 150px;
+  right: 10px;
+  width: 200px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+#left_container{
+  border: 2px solid purple;
+  left: 10px;
+  width: 180px;
+  position: absolute;
+  top: 150px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+#header {
+  border: 2px solid red;
+  display: block;
+  position:relative;
+  width: 950px;
+  height: 150px;
+  margin: 0 auto;
+  top: 0px;
+}
+
+#local_users {
+  border: 2px solid teal;
+  position:relative;
+  display: inline-block;
+  width: 750px;
+  top: 0px;
+  left: 0px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+.local_user {
+  border: 2px solid yellow;
+  position:relative;
+  display: inline-block;
+  width: 240px;
+  height: 360px;
+  margin: 0 auto;
+  left: 0px;
+  top: 0px;
+}
+
+#place_holder_leftside {
+  border: 2px solid purple;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  width: 180px;
+  height: 1600px;
+  margin: 0 auto;
+}
+
+#login_signup{
+  border: 8px solid green;
+  position:relative;
+  display: inline-block;
+  width: 750px;
+  top: 0px;
+  left: 0px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+
+
+
+#top_header {
+  border: 2px solid gray;
+  position:relative;
+  display: inline-block;
+  width: 950px;
+  height: 80px;
+  margin: 0 auto;
+  top: 0px;
+}
+
+#sub_header {
+  border: 2px solid yellow;
+  position:relative;
+  display: inline-block;
+  width: 950px;
+  height: 60px;
+  margin: 0 auto;
+  top: 0px;
+}
+
+#main_view {
+  border: 2px solid yellow;
+  position:relative;
+  display: inline-block;
+  width: 750px;
+  top: 0px;
+  left: 190px;
+  height: 1600px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+.img_header_logo{
+  border: 2px solid green;
+  position:relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 220px;
+  height: 40px;
+  top: 10px;
+  left: 0px;
+}
+
+.img_new_session{
+  border: 2px solid green;
+  display: inline-block;
+  position:relative;
+  top: 8px;
+  left: 450px;
+  margin: 0 0 0 0px;
+  height: 26px;
+  width: 120px;
+}
+
+
+.img_login_session{
+  border: 2px solid green;
+  display: inline-block;
+  position:relative;
+  top: 9px;
+  left: 475px;
+  margin: 0 0 0 0px;
+  height: 26px;
+  width: 120px;
+}
+
+
+
+ul {
+    list-style: none;
+    position: relative;
+}
+
+
+li {
+    position: relative;
+    display: inline-block;
+    font-family: "Helvetica";
+    margin: 0 6px 0 -6px;
+
+}
+
+li img{
+  height: 26px;
+  width: 110px;
+}
+
+/*li.bronx{
+  top: 0px;
+  width: 40px;
+
+}*/
+
+
+
+.subheader{
+  color: red;
+border: 2px solid black;
+  position: relative;
+  margin: 0 auto;
+  top: 4px;
+  left: 0px;
+}
+
+.use_location{
+  margin-left:  -40px;
+  margin-right: 60px;
+}
+
+.use_location img{
+    height: 26px;
+  width: 160px;
+}
+
+.find_by_zip{
+  color: purple;
+  margin-left: 50px;
+}
+
+
+
+
+#main_body{
+  border: 4px solid white;
+  position:relative;
+  width: 950px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+
+
+#maps{
+  border: 2px solid gray;
+  position:relative;
+  width: 950px;
+  margin: 0 auto;
+}
+
+
+#categories{
+  border: 2px solid red;
+  position:relative;
+  width: 950px;
+  margin: 0 auto;
+}
+
+.category_container{
+  border: 2px solid yellow;
+  position:relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  left: 14px;
+}
+
+.category_container_boro{
+  border: 2px solid white;
+  position:relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  left: 14px;
+}
+
+
+.boro_image{
+  border: 2px solid red;
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 290px;
+  width: 290px;
+  overflow: hidden;
+  margin:0 auto;
+  padding:0 0 0 0;
+}
+
+.boro_image_queens {
+  border: 2px solid red;
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 0px;
+  height: 260px;
+  width: 260px;
+  overflow: hidden;
+  margin:0 auto;
+  padding:0 0 0 0;
+}
+
+.category_image{
+  border: 2px solid white;
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 290px;
+  width: 290px;
+  overflow: hidden;
+  margin:0 auto;
+  padding:0 0 0 0;
+}
+
+
+
+#line{
+  border: 2px solid black;
+  position:relative;
+  display: block;
+  height: 0px;
+  width: 920px;
+  top: 5px;
+  border-radius: 12px;
+}
+
+
+#subway_icon{
+
+}
+
+#movies_icon{
+
+}
+
+#bike_icon{
+
+}
+
+
+.inner_information{
+  position: absolute;
+  overflow: scroll;
+  top: 0px;
+  left: 8px;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 0 0 20px 0;
+  background-color: rgba(160,160,160,.8);
+  border-radius: 8px;
+}
+
+.inner_information p{
+  margin: 30px;
+  color: rgba(55,55,55,.9);
+}
+
+h3{
+  padding-left: 20px;
+}
+
+
+.drink{
+  top: -10px;
+  left: 30px;
+  position: relative;
+  color: white;
+  background-color: black;
+}
+
+
+.restaurant{
+  top: -10px;
+  left: 30px;
+  position: relative;
+  color: white;
+  background-color: black;
+}
+
