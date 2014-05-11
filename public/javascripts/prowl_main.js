@@ -19,7 +19,7 @@ $(function(){
 
   var addingContent = $("#main_view");
 
-  var signUp = $("<div id='login_signup'><input type='text' placeholder='Enter Name Here' class='textSignUp'></br><input type='text' placeholder='Enter Password Here' class='textPassword'><button class='passwordButton'>Sign Up Now!</button></br></div>");
+  var signUp = $("<div id='login_signup'><input type='text' placeholder='Enter Name Here' class='nameSignUp'></br><input type='text' placeholder='Enter Email Here' class='emailSignUp'></br><input type='text' placeholder='Enter Password Here' class='enterPassword'></br><input type='text' placeholder='Confirm Password Here' class='confirmPassword'><button class='passwordButton'>Sign Up Now!</button></br></div>");
 
   var peopleOnline =   $("<div id='local_users'>");
 
