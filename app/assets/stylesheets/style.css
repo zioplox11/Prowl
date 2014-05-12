@@ -31,7 +31,7 @@ html {
   width: 200px;
   height: 700px;
   margin: 0 auto;
-  display:none;
+  /*display:none;*/
 }
 
 #left_container{
@@ -42,7 +42,7 @@ html {
   top: 150px;
   height: 900px;
   margin: 0 auto;
-  display:none;
+  /*display:none;*/
 }
 
 #place_holder_leftside {
@@ -53,7 +53,11 @@ html {
   width: 180px;
   height: 1600px;
   margin: 0 auto;
+<<<<<<< HEAD:public/style/style.css
   display: none;
+=======
+  /*display: none;*/
+>>>>>>> asset_pipeline:app/assets/stylesheets/style.css
 }
 
 #signIn{
@@ -165,16 +169,17 @@ html {
   left: 0px;
   height: 640px;
   margin: 0 auto;
-/*  display:none;*/
+  display:none;
+
 }
 
 
 ul {
-    list-style: none;
-    text-decoration: none;
-    position: relative;
-    display: block;
-    text-align: left;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  text-align: left;
 
 }
 
