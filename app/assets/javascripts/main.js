@@ -5,7 +5,17 @@ var app = {
 
   }
 
+
+
+
 }
+
+
+function helloWorld() {
+  return 'Hello, World!'
+}
+
+helloWorld();
 
 
 // $(document).ready(function(){
