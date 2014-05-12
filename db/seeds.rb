@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 User.delete_all
 
 user1 = User.create(username: 'admin', email: 'admin@admin.com', password: '12345678', password_confirmation: '12345678', admin_status: true)
@@ -44,7 +43,6 @@ photo7 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 
 photo7a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'In Savannah, Georgia', user_id: 7)
 
 
-
 Message.delete_all
 
 message1 = Message.create(body: 'testing the waters', sender_id: 1, recipient_id: 2)
@@ -60,16 +58,16 @@ message5 = Message.create(body: 'good day', sender_id: 3, recipient_id: 5)
 message6 = Message.create(body: 'good day to you', sender_id: 5, recipient_id: 3)
 
 
-
-
-
 Post.delete_all
 
-post = Post.create()
+post = Post.create(title: 'selling my couch', body: 'i have a nice couch for sale.', user_id: 4)
 
+post1 = Post.create(title: 'yard sale this weekend', body: 'we will have lots of great stuff. stop by.')
 
+post2 = Post.create(title: 'volunteering at the food shelter', body: 'food folks and fun all for a very good cause.')
 
-
+user6.posts << post1
+user3.posts << post2
 
 
 Interest.delete_all
