@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require underscore-min
 //= require backbone-min
+//= require user
+//= require signup_view
+//= require main
 //= require_tree .
