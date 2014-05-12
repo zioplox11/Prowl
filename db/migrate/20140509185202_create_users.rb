@@ -20,6 +20,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string      :income
       t.string      :relationship_status
       t.string      :relationship_type
+      t.string      :children_family
       t.string      :languages
       t.string      :pets
       t.text         :self_summary

@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140512164520) do
     t.string   "income"
     t.string   "relationship_status"
     t.string   "relationship_type"
+    t.string   "children_family"
     t.string   "languages"
     t.string   "pets"
     t.text     "self_summary"
