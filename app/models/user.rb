@@ -32,4 +32,16 @@
 
 class User < ActiveRecord::Base
   has_secure_password
+
+  has_many :photos
+  has_many :posts
+  has_and_belongs_to_many :interests
+
+  has_many :received_messages,
+                  :class_name => 'Message',
+                  :primary_key=>'beamer_id',
+                  :foreign_key => 'user_id',
+                  :order => "messages.created_at DESC",
+                  :conditions => ["messages.recipient_deleted = ?", false]
+
 end
