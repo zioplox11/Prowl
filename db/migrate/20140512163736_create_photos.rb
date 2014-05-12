@@ -4,6 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
         t.string    :image_url
         t.string    :description
         t.integer   :user_id
+        t.boolean :profile, default: false
         t.timestamps
     end
   end

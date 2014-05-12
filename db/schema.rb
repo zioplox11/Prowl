@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140512164520) do
     t.string   "image_url"
     t.string   "description"
     t.integer  "user_id"
+    t.boolean  "profile",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
