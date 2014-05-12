@@ -1,4 +1,4 @@
-class LoginController < ApplicationController
+class SessionController < ApplicationController
 
   def create
 
@@ -10,6 +10,5 @@ class LoginController < ApplicationController
   end
 
   private
-
 
 end

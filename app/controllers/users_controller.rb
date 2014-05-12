@@ -9,11 +9,13 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    render json: @users
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    render json: @user
   end
 
   # GET /users/new
@@ -75,7 +77,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(
         :user_name,
-        :password_digest,
+        :password,
+        :password_confirmation,
         :height,
         :body_type,
         :birthdate,
