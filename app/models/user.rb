@@ -15,5 +15,12 @@
 #
 
 class User < ActiveRecord::Base
+  # brcypt validation
   has_secure_password
+
+  # validations
+  validates :username, :email, presence: true
+  validates :username, :email, uniqueness: true
+
+  # associations
 end
