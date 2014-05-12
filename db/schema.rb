@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 20140512164520) do
     t.string "interest"
   end
 
+  create_table "interests_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+  end
+
   create_table "messages", force: true do |t|
     t.text     "body"
     t.integer  "sender_id"
@@ -75,11 +80,6 @@ ActiveRecord::Schema.define(version: 20140512164520) do
     t.string   "looking_for"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "users_interests", force: true do |t|
-    t.integer "user_id"
-    t.integer "interest_id"
   end
 
 end

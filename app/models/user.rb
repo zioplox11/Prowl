@@ -22,6 +22,7 @@
 #  income              :string(255)
 #  relationship_status :string(255)
 #  relationship_type   :string(255)
+#  children_family     :string(255)
 #  languages           :string(255)
 #  pets                :string(255)
 #  self_summary        :text
@@ -39,9 +40,9 @@ class User < ActiveRecord::Base
 
   has_many :received_messages,
                   :class_name => 'Message',
-                  :primary_key=>'beamer_id',
-                  :foreign_key => 'user_id',
-                  :order => "messages.created_at DESC",
-                  :conditions => ["messages.recipient_deleted = ?", false]
+                  :primary_key=>'user',
+                  :foreign_key => 'recipient_id'
+                  # :order => "messages.created_at DESC",
+                  # :conditions => ["messages.recipient_deleted = ?", false]
 
 end

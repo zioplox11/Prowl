@@ -22,6 +22,7 @@
 #  income              :string(255)
 #  relationship_status :string(255)
 #  relationship_type   :string(255)
+#  children_family     :string(255)
 #  languages           :string(255)
 #  pets                :string(255)
 #  self_summary        :text
