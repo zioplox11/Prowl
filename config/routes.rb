@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root 'session#index'
-  get  '/home'   => 'session#index'
   post '/login'  => 'session#create'
   get  '/logout' => 'session#destroy'
   post '/auth/facebook' => 'session#facebook'
