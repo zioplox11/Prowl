@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
         :description
         :profile,
         :created_at,
-        :updated_at,
+        :updated_at
       )
     end
 

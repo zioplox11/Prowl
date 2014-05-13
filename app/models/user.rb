@@ -54,4 +54,24 @@ class User < ActiveRecord::Base
                 :class_name => 'Message',
                 :foreign_key => 'sender_id'
 
+
+  def find_or_create_from_auth_hash(auth_hash)
+    user = User.find_by(email: auth_hash['info']['email'])
+    if user
+      user.update(
+        fb_token:      auth_hash['credentials']['token'],
+        fb_expiration: auth_hash['credentials']['token']
+        )
+      return user
+    else
+      User.new(
+        username:      auth_hash['info']['email'],
+        email:         auth_hash['info']['email'],
+        fb_token:      auth_hash['credentials']['token'],
+        fb_expiration: auth_hash['credentials']['token']
+        )
+    end
+
+  end
+
 end

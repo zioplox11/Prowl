@@ -18,11 +18,11 @@
 
   <div class="user_sign_in">
     <%= form_tag(login_path, method: "post") do %>
-      <%= label_tag(:email) %>
-      <%= text_field_tag(:email) %>
-      <%= label_tag(:password) %>
-      <%= password_field_tag(:password) %>
-      <%= submit_tag("Sign In")%>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Sign In" %>
     <% end %>
   </div><br>
 
@@ -37,12 +37,12 @@
       <%= f.label :password %>
       <%= f.password_field :password, placeholder: "Password" %> <br>
       <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation, placeholder: "Password"  %> <br>
+      <%= f.password_field :password_confirmation, placeholder: "Password" %> <br>
       <%= f.submit "Sign Up" %>
     <% end %>
   </div>
 
-  <%= link_to "Sign Up with Facebook", "https://www.facebook.com", class: "facebook_sign_up" %>
+  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook_sign_up" %>
 
 </body>
 </html>

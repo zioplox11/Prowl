@@ -10,12 +10,18 @@ class SessionController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+    if omniauth_hash
+      user = facebook_login
+    else
+      user = vanilla_login
+    end
+
+    if user
+      session[:user_id] = user.id
     else
       flash[:error] = 'Login unsuccessful. Please try again.'
     end
+
     redirect_to root_path
   end
 
@@ -24,8 +30,25 @@ class SessionController < ApplicationController
     redirect_to root_path
   end
 
-  def facebook
+  private
 
+  def facebook_login
+    binding.pry
+    User.find_or_create_from_auth_hash(omniauth_hash)
+  end
+
+  def vanilla_login
+    user = User.find_by(email: params[:email])
+
+    if user && user.authenticate(params[:password])
+      return user
+    else
+      return nil
+    end
+  end
+
+  def omniauth_hash
+    request.env['omniauth.auth']
   end
 
 end
