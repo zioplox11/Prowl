@@ -7,7 +7,24 @@ class CreateUsers < ActiveRecord::Migration
       t.string      :body_type
       t.date        :birthdate
       t.string      :email
+      t.string      :gender
       t.boolean  :admin_status, default: false
+      t.string      :ethnicity
+      t.string      :diet
+      t.string      :drugs
+      t.string      :drinks
+      t.string      :smokes
+      t.string      :zodiac_sign
+      t.string      :education
+      t.string      :job
+      t.string      :income
+      t.string      :relationship_status
+      t.string      :relationship_type
+      t.string      :children_family
+      t.string      :languages
+      t.string      :pets
+      t.text         :self_summary
+      t.string      :looking_for
       t.timestamps
     end
   end

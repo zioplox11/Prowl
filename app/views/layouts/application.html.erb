@@ -11,72 +11,52 @@
 
   <%= link_to 'Sign Out', logout_path %>
   <%= yield %>
+
   <div id="main_container">
+    <div id="left_container">
+      <p> I'm a great place for navigation </p>
 
-      <div id="left_container">
-
-        <p> I'm a great place for navigation </p>
-
-        <ul class="left_nagivation">
-
-          <li>View My Profile</li>
-          <li>Browse People Around Me</li>
-          <li>View My Messages</li>
-          <li>View My Matches</li>
-
-        </ul>
-
-      </div>
-
-      <div id="place_holder_leftside">
-
-        <p> I hold the left side free and clear during scrolling.</p>
+      <ul class="left_navigation">
+        <li class="view_profile">View My Profile</li>
+        <li class="browse_users">Browse People Around Me</li>
+        <li class="message">View My Messages</li>
+        <li class="view_matches">View My Matches</li>
+      </ul> <!-- // left_navigation -->
+    </div> <!-- // left_container -->
 
 
-      </div>
+    <div id="place_holder_leftside">
+      <p> I hold the left side free and clear during scrolling.</p>
+    </div> <!-- // place_holder_leftside -->
 
-      <div id="header">
 
-        <p id="headerLogo">PROWL</p>
+    <div id="header">
+      <p id="header_logo">PROWL</p>
 
       <div id="top_header">
-
-        <p id="signOut"> You can sign out here </p>
-        <p id="signIn"> You can sign in here </p>
-
-      </div>
+        <p id="sign_out"> You can sign out here </p>
+        <p id="sign_in"> You can sign in here </p>
+      </div> <!-- // top_header -->
 
       <div id="sub_header">
-
         <p> I'm a good place for a navigation bar, log-in and log-out etc.</p>
+      </div> <!-- // sub_header -->
 
-      </div>
+    </div> <!-- // header -->
 
-      </div>
 
       <div id="main_splash_view">
 
-      </div>
-
-
+      </div> <!-- // main_splash_view -->
 
       <div id="main_view">
 
+      </div> <!-- // main_view -->
+  </div> <!-- // main_container -->
 
-      </div>
-
-
-
-
-      </div>
-
-      </div>
-
-      <div id="right_container">
-
-        <p> I'm a great place for introducing new users or opening some chats </p>
-
-      </div>
+  <div id="right_container">
+    <p> I'm a great place for introducing new users or opening some chats </p>
+  </div> <!-- // right_container -->
 
 </body>
 </html>

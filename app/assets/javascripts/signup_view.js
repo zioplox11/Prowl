@@ -18,7 +18,7 @@ SignUpView = Backbone.View.extend({
 
   attributes: function(){
     return {
-      user_name: this.usernameField.val(),
+      username: this.usernameField.val(),
       email: this.emailField.val(),
       password: this.passwordField.val(),
       password_confirmation: this.passwordConfirmationField.val()
@@ -28,7 +28,7 @@ SignUpView = Backbone.View.extend({
   createUser: function(){
     user = new User(this.attributes());
     user.save();
-    console.log(user.get('user_name'))
+    console.log(user.get('username'))
     console.log('weafawlekjghewriugbaeioru')
   }
 
