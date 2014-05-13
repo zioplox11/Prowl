@@ -35,6 +35,10 @@ class MessagesController < ApplicationController
 
   private
 
+    def set_photo
+      @message = Message.find(params[:id])
+    end
+
     def messages_params
       params.require(:message).permit(
         :sender_id,
