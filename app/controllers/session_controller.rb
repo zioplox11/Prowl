@@ -1,16 +1,15 @@
 class SessionController < ApplicationController
 
   def index
+    @new_user = User.new
     if logged_in?
       render :index
     else
-      @new_user = User.new
       render :welcome, layout: false
     end
   end
 
   def create
-    @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to home_path

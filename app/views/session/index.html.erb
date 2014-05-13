@@ -1,1 +1,9 @@
 
+<script>
+$(function(){
+  currentUser = new User({id: '<%= current_user.id %>'});
+  currentUser.fetch().complete(function(){
+    logInView = new LogInView({model: currentUser});
+  });
+});
+</script>

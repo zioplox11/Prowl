@@ -13,7 +13,7 @@
 
   <h2>Already have an account? <strong>Sign In</strong></h2><br>
   <div class='user_sign_in'>
-    <%= form_tag(login_path, method: "post") do %>
+    <%= form_tag(login_path, method: "POST") do %>
       <%= label_tag("email") %>
       <%= text_field_tag(:email) %>
       <%= label_tag(:password) %>
