@@ -1,9 +1,18 @@
 
 <script>
-$(function(){
-  currentUser = new User({id: '<%= current_user.id %>'});
-  currentUser.fetch().complete(function(){
-    logInView = new LogInView({model: currentUser});
+  $(document).ready(function(){
+    currentUser = new User({id: '<%= current_user.id %>'});
+    currentUser.fetch().complete(function(){
+      logInView = new LogInView({model: currentUser});
+    });
   });
-});
 </script>
+
+
+
+<script id="current_user_profile" type="text/template">
+    <h1>Username: <%%= username %></h1><button class="edit_profile">Edit<button>
+    <p>Email: <%%= email %></p><button class="edit_profile">Edit<button>
+    <p>Age: <%%= age %></p><button class="edit_profile">Edit<button>
+</script>
+

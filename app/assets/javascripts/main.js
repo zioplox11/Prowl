@@ -1,19 +1,13 @@
 var app = {
-
   init: function(){
     Backbone.history.start();
-
   }
-
-
 }
 
 // $(document).ready(function(){
 //   app.init()
 //   Backbone.history.start();
 // });
-
-
 
 $(function(){
 
