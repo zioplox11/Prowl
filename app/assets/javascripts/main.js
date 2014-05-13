@@ -8,14 +8,6 @@ var app = {
 
 }
 
-
-function helloWorld() {
-  return 'Hello, World!'
-}
-
-helloWorld();
-
-
 // $(document).ready(function(){
 //   app.init()
 //   Backbone.history.start();
@@ -56,14 +48,14 @@ $(function(){
 
   //  here is the view to uncomment if you are NOT logged in:
 
-  var mainSplashView = $('#main_splash_view');
+  // var mainSplashView = $('#main_splash_view');
 
-  var signUp = $("<div id='signup_form'><p>The best place to mix and mingle with ladies locally ... and around the world!</p><input type='text' placeholder='Enter Name Here' class='name_signup'></br><input type='text' placeholder='Enter Email Here' class='email_signup'></br><input type='password' placeholder='Enter Password Here' class='enter_password'></br><input type='password' placeholder='Confirm Password Here' class='confirm_password'></br><button class='submit_button'>Sign Up Now!</button></br></div>");
+  // var signUp = $("<div id='signup_form'><p>The best place to mix and mingle with ladies locally ... and around the world!</p><input type='text' placeholder='Enter Name Here' class='name_signup'></br><input type='text' placeholder='Enter Email Here' class='email_signup'></br><input type='password' placeholder='Enter Password Here' class='enter_password'></br><input type='password' placeholder='Confirm Password Here' class='confirm_password'></br><button class='submit_button'>Sign Up Now!</button></br></div>");
 
-  mainSplashView.append(signUp);
+  // mainSplashView.append(signUp);
 
-  user = new User();
+  // user = new User();
 
-  signUpView = new SignUpView();
+  // signUpView = new SignUpView();
 
 });

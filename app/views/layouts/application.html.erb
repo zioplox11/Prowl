@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <%= link_to 'Sign Out', logout_path %>
   <%= yield %>
 
   <div id="main_container">
@@ -34,7 +33,7 @@
       <p id="header_logo">PROWL</p>
 
       <div id="top_header">
-        <p id="sign_out"> You can sign out here </p>
+        <%= link_to 'Sign Out', logout_path, id: 'signout' %>
         <p id="sign_in"> You can sign in here </p>
       </div> <!-- // top_header -->
 
