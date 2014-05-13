@@ -28,7 +28,7 @@ SignUpView = Backbone.View.extend({
   createUser: function(){
     user = new User(this.attributes());
     user.save();
-    console.log(user.get('user_name'))
+    console.log(user.get('username'))
     console.log('weafawlekjghewriugbaeioru')
   }
 
