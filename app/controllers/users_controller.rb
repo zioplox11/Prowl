@@ -76,6 +76,7 @@ class UsersController < ApplicationController
         :body_type,
         :birthdate,
         :email,
+        :diet,
         :created_at,
         :updated_at
       )

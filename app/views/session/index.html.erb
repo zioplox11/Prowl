@@ -10,9 +10,17 @@
 
 
 
-<script id="current_user_profile" type="text/template">
-    <h1>Username: <%%= username %></h1><button class="edit_profile">Edit<button>
-    <p>Email: <%%= email %></p><button class="edit_profile">Edit<button>
-    <p>Age: <%%= age %></p><button class="edit_profile">Edit<button>
+<script id="view_profile" type="text/template">
+  <div>Username: <%%= username %></div>
+  <div>Email: <%%= email %></div>
+  <div>Diet: <%%= diet %></div>
 </script>
 
+<script id="edit_profile" type="text/template">
+    <form id="edit-profile">
+      <div>Username: <input id="username" name="username" type="text" value="<%%= username %>" /></div>
+      <div>Email: <input id="email" name="email" type="text" value="<%%= email %>" /></div>
+      <div>Diet: <input id="diet" name="diet" type="text" value="<%%= diet %>" /></div>
+      <button>Save</button>
+    </form>
+</script>
