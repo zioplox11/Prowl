@@ -12,6 +12,9 @@
   <h2>Welcome to Prowl</h2>
 
   <h2>Already have an account? <strong>Sign In</strong></h2><br>
+  <% if flash[:notice] %>
+    <div id='bad_login'><%= flash[:notice] %></div>
+  <% end %>
   <div class='user_sign_in'>
     <%= form_tag(login_path, method: "post") do %>
       <%= label_tag("email") %>

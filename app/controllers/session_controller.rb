@@ -15,6 +15,8 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect_to home_path
     else
+      @new_user = User.new
+      flash[:notice] = "That username or email is already in use"
       render :welcome , layout: false
     end
   end
