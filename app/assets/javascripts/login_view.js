@@ -14,13 +14,13 @@ LogInView = Backbone.View.extend({
 
   renderProfile: function(){
     var pr = $('<div id="my_profile">');
-    pr.html(this.model.attributes);
+    pr.html(this.model.attributes());
     this.$el.append(pr);
   },
 
   refreshProfile: function(){
      var pr = $('<div id="my_profile">');
-    pr.html(this.model.attributes);
+    pr.html(this.model.attributes());
     this.$el.append(pr);
   },
 
