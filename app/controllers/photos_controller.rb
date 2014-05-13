@@ -35,7 +35,6 @@ class PhotosController < ApplicationController
   end
 
   private
-
     def set_photo
       @photo = Photo.find(params[:id])
     end
@@ -44,7 +43,7 @@ class PhotosController < ApplicationController
       params.require(:photo).permit(
         :user_id,
         :image_url,
-        :description
+        :description,
         :profile,
         :created_at,
         :updated_at,
