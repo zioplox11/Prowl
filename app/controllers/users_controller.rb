@@ -28,11 +28,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to home_path
+      render 'session/index'
     else
-      flash[:notice] = 'Login unsuccessful. Please try again.'
-      @new_user = User.new
-      render 'session/welcome', layout: false
+      flash[:error] = "That username or email is already in use. Please try again"
+      redirect_to root_path
     end
   end
 
