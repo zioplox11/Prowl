@@ -1,30 +1,54 @@
 var LogInView, logInView;
 
-LogInView = Backbone.View.extend({
+$(document).ready(function(){
 
-  el: '#main_view',
+  LogInView = Backbone.View.extend({
 
-  initialize: function(){
-      this.renderProfile();
-  },
+    el: $('#my_profile'),
 
-  events: {
-    'click .view_profile' : 'refreshProfile'
-  },
+    initialize: function(){
+        this.render();
+        this.listenTo(this.model, "change", this.renderProfileView);
+    },
 
-  renderProfile: function(){
-    var pr = $('<div id="my_profile">');
-    pr.html(this.model.get("username"));
-    this.$el.append(pr);
-  },
+    events: {
+      "click button": "updateProfile",
+      "change input": "changed"
+    },
 
-  refreshProfile: function(){
-     var pr = $('<div id="my_profile">');
-    pr.html(this.model.get("username"));
-    this.$el.append(pr);
-  }
+    editTemplate: _.template($("#edit_profile").html()),
 
+    viewTemplate: _.template($("#view_profile").html()),
+
+    render: function(){
+      this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
+      this.$viewEl = $("<div>").html(this.viewTemplate(this.model.toJSON()));
+
+      this.$el.empty();
+      this.$el.append(this.$formEl);
+      this.$el.append(this.$viewEl);
+    },
+
+    renderProfileView: function(){
+        this.$viewEl.html(this.viewTemplate(this.model.toJSON()));
+    },
+
+    updateProfile: function(event){
+      event.preventDefault();
+      console.log("yo");
+      this.model.save();
+    },
+
+    changed: function(event){
+      console.log(event);
+      var changed = event.currentTarget;
+      console.log(changed);
+      var value = $(event.currentTarget).val();
+      console.log(value);
+      this.model.set(changed.id, value);
+    }
+
+  });
 });
-
 
 

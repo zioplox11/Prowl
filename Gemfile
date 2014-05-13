@@ -58,4 +58,9 @@ end
 
 gem 'rails_12factor', group: :production
 
+
 gem 'omniauth-facebook'
+
+gem 'rails_log_stdout', github: 'Heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'Heroku/rails3_serve_static_assets'
+

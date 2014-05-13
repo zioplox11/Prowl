@@ -1,9 +1,26 @@
 
 <script>
-$(function(){
-  currentUser = new User({id: '<%= current_user.id %>'});
-  currentUser.fetch().complete(function(){
-    logInView = new LogInView({model: currentUser});
+  $(document).ready(function(){
+    currentUser = new User({id: '<%= current_user.id %>'});
+    currentUser.fetch().complete(function(){
+      logInView = new LogInView({model: currentUser});
+    });
   });
-});
+</script>
+
+
+
+<script id="view_profile" type="text/template">
+  <div>Username: <%%= username %></div>
+  <div>Email: <%%= email %></div>
+  <div>Diet: <%%= diet %></div>
+</script>
+
+<script id="edit_profile" type="text/template">
+    <form id="edit-profile">
+      <div>Username: <input id="username" name="username" type="text" value="<%%= username %>" /></div>
+      <div>Email: <input id="email" name="email" type="text" value="<%%= email %>" /></div>
+      <div>Diet: <input id="diet" name="diet" type="text" value="<%%= diet %>" /></div>
+      <button>Save</button>
+    </form>
 </script>
