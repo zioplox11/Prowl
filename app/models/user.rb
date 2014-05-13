@@ -40,9 +40,12 @@ class User < ActiveRecord::Base
 
   has_many :received_messages,
                   :class_name => 'Message',
-                  :primary_key=>'user_id',
                   :foreign_key => 'recipient_id'
                   # :order => "messages.created_at DESC",
                   # :conditions => ["messages.recipient_deleted = ?", false]
+
+  has_many :sent_messages,
+                :class_name => 'Message',
+                :foreign_key => 'sender_id'
 
 end

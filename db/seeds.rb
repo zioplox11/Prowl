@@ -24,38 +24,38 @@ user7 = User.create(username: 'pauline', email: 'pauline@pauline.com', password:
 
 Photo.delete_all
 
-photo1 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'This was taken last year in Hawaii', user_id: 1)
+photo1 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'This was taken last year in Hawaii', user_id: user1.id)
 
-photo2 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'On my birthday', user_id: 2)
+photo2 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'On my birthday', user_id: user2.id)
 
-photo3 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'Ok so I am not the most photogenic', user_id: 3)
+photo3 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'Ok so I am not the most photogenic', user_id: user3.id)
 
-photo4 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'Best day of my life', user_id: 4)
+photo4 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'Best day of my life', user_id: user4.id)
 
-photo5 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No one can stop me from smiling', user_id: 5)
+photo5 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No one can stop me from smiling', user_id: user5.id)
 
-photo5a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'With mom on my birthday this year', user_id: 5)
+photo5a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'With mom on my birthday this year', user_id: user5.id)
 
-photo6 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', user_id: 6)
+photo6 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', user_id: user6.id)
 
-photo7 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No comment. LOL.', user_id: 7)
+photo7 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No comment. LOL.', user_id: user7.id)
 
-photo7a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'In Savannah, Georgia', user_id: 7)
+photo7a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'In Savannah, Georgia', user_id: user7.id)
 
 
 Message.delete_all
 
-message1 = Message.create(body: 'testing the waters', sender_id: 1, recipient_id: 2)
-message2 = Message.create(body: 'testing the waters again', sender_id: 1, recipient_id: 2)
-message3 = Message.create(body: 'testing the waters yet again', sender_id: 1, recipient_id: 2)
-message4 = Message.create(body: 'hi there', sender_id: 2, recipient_id: 1)
-message5 = Message.create(body: 'good day', sender_id: 3, recipient_id: 5)
-message6 = Message.create(body: 'good day to you', sender_id: 5, recipient_id: 3)
+message1 = Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user2.id)
+message2 = Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user2.id)
+message3 = Message.create(body: 'testing the waters yet again', sender_id: user1.id, recipient_id: user2.id)
+message4 = Message.create(body: 'hi there', sender_id: user2.id, recipient_id: user1.id)
+message5 = Message.create(body: 'good day', sender_id: user3.id, recipient_id: user5.id)
+message6 = Message.create(body: 'good day to you', sender_id: user5.id, recipient_id: user3.id)
 
 
 Post.delete_all
 
-post = Post.create(title: 'selling my couch', body: 'i have a nice couch for sale.', user_id: 4)
+post = Post.create(title: 'selling my couch', body: 'i have a nice couch for sale.', user_id: user4.id)
 post1 = Post.create(title: 'yard sale this weekend', body: 'we will have lots of great stuff. stop by.')
 post2 = Post.create(title: 'volunteering at the food shelter', body: 'food folks and fun all for a very good cause.')
 

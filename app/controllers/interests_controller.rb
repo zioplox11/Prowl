@@ -20,5 +20,14 @@ class InterestsController < ApplicationController
 
   end
 
+  private
+
+    def interests_params
+      params.require(:interests).permit(
+        :interest,
+        :created_at,
+        :updated_at,
+      )
+    end
 
 end

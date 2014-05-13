@@ -18,7 +18,7 @@ SignUpView = Backbone.View.extend({
 
   attributes: function(){
     return {
-      user_name: this.usernameField.val(),
+      username: this.usernameField.val(),
       email: this.emailField.val(),
       password: this.passwordField.val(),
       password_confirmation: this.passwordConfirmationField.val()
