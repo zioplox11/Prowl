@@ -5,7 +5,7 @@ class SessionController < ApplicationController
       render :index
     else
       @new_user = User.new
-      render :welcome, layout: false
+      render_splash
     end
   end
 
@@ -13,21 +13,25 @@ class SessionController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to home_path
     else
-      @new_user = User.new
-      flash[:notice] = "That username or email is already in use"
-      render :welcome , layout: false
+      flash[:error] = 'Login unsuccessful. Please try again.'
     end
+    redirect_to root_path
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   def facebook
 
   end
 
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_path
+  private
+
+  def render_splash
+    render :welcome , layout: false
   end
 
 end
