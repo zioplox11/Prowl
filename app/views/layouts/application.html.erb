@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Prowl</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -8,8 +9,74 @@
 </head>
 <body>
 
-  <p>I AM APPLICATION.HTML.ERB</p>
-<%= yield %>
+  <%= link_to 'Sign Out', logout_path %>
+  <%= yield %>
+  <div id="main_container">
+
+      <div id="left_container">
+
+        <p> I'm a great place for navigation </p>
+
+        <ul class="left_nagivation">
+
+          <li>View My Profile</li>
+          <li>Browse People Around Me</li>
+          <li>View My Messages</li>
+          <li>View My Matches</li>
+
+        </ul>
+
+      </div>
+
+      <div id="place_holder_leftside">
+
+        <p> I hold the left side free and clear during scrolling.</p>
+
+
+      </div>
+
+      <div id="header">
+
+        <p id="headerLogo">PROWL</p>
+
+      <div id="top_header">
+
+        <p id="signOut"> You can sign out here </p>
+        <p id="signIn"> You can sign in here </p>
+
+      </div>
+
+      <div id="sub_header">
+
+        <p> I'm a good place for a navigation bar, log-in and log-out etc.</p>
+
+      </div>
+
+      </div>
+
+      <div id="main_splash_view">
+
+      </div>
+
+
+
+      <div id="main_view">
+
+
+      </div>
+
+
+
+
+      </div>
+
+      </div>
+
+      <div id="right_container">
+
+        <p> I'm a great place for introducing new users or opening some chats </p>
+
+      </div>
 
 </body>
 </html>

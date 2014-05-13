@@ -5,8 +5,8 @@ class HomeController < ApplicationController
       render :index
     else
       @new_user = User.new
-      render layout: false
-      render :welcome
+      binding.pry
+      render layout: 'welcome'
     end
   end
 
