@@ -5,7 +5,7 @@ class SessionController < ApplicationController
       render :index
     else
       @new_user = User.new
-      render_splash
+      render :welcome , layout: false
     end
   end
 
@@ -26,12 +26,6 @@ class SessionController < ApplicationController
 
   def facebook
 
-  end
-
-  private
-
-  def render_splash
-    render :welcome , layout: false
   end
 
 end
