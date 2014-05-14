@@ -9,42 +9,39 @@
   </head>
 <body>
 
+  <% if flash[:error] %>
+    <div id="error"><%= flash[:error] %></div>
+  <% end %>
+
   <div id="main_container">
 
-    <% if flash[:error] %>
-      <div class="errors"><%= flash[:error] %></div>
-    <% end %>
+    <div id="header">
+      <p id="header_logo">PROWL</p>
+        <h2>Welcome to Prowl</h2>
+        <h2>Already have an account? <strong>Sign In</strong></h2><br>
 
-    <div id="page_header">
+      <div id="top_header">
+        <%= link_to 'Sign Out', logout_path, id: 'signout' %>
+        <p id="sign_in"> You can sign in here </p>
 
-      <h2>Welcome to Prowl</h2>
-      <h2>Already have an account? <strong>Sign In</strong></h2><br>
 
-      <div class="sign_in_user">
-        <%= form_tag(login_path, method: "post") do %>
-          <%= label_tag :email %>
-          <%= text_field_tag :email %><br>
-          <%= label_tag :password %>
-          <%= password_field_tag :password %><br>
-          <%= submit_tag "Sign In" %>
-        <% end %>
-      </div><br><!-- // sign_in_user -->
-
-      <div id='sign_in_facebook'>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
-
-        <div id="status">
+        <div class="user_sign_in">
+          <%= form_tag(login_path, method: "post") do %>
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+            <%= submit_tag "Sign In" %>
+          <% end %>
         </div>
-      </div><!-- //sign_in_facebook -->
 
-    </div><!-- // header -->
+      </div> <!-- // top_header -->
+    </div> <!-- // header -->
 
-    <div id='sign_up_view'>
+    <div id="main_splash_view">
 
       <h2>New to Prowl? Sign Up!</h2>
-
-      <div class="sign_up_user">
+      <div class="user_sign_up">
         <%= form_for(@new_user, url: users_path, method: "post") do |f| %>
           <%= f.label :username %>
           <%= f.text_field :username, placeholder: "Username" %> <br>
@@ -56,13 +53,13 @@
           <%= f.password_field :password_confirmation, placeholder: "Password" %> <br>
           <%= f.submit "Sign Up" %>
         <% end %>
-      </div><!-- // sign_up_user -->
+      </div>
 
       <%= link_to "Sign In with Facebook", "/auth/facebook", id: "sign_up_facebook" %>
 
     </div><!-- // main_splash_view -->
 
   </div><!-- // main_container -->
-
 </body>
 </html>
+

@@ -1,9 +1,10 @@
 html {
-  background: url(../images/test.jpg) no-repeat center center fixed;
+  background: url(../images/splash_page_view.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background: rgba(240,  232, 209 , 1);
 }
 
 .remember-this-will-NOT-be-read {
@@ -168,7 +169,7 @@ html {
   left: 0px;
   height: 640px;
   margin: 0 auto;
-  display:none;
+/*  display:none;*/
 
 }
 
