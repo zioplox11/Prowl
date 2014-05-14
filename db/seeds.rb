@@ -22,6 +22,8 @@ user6 = User.create(username: 'gretchen', email: 'gretchen@gretchen.com', passwo
 
 user7 = User.create(username: 'pauline', email: 'pauline@pauline.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft2', body_type: 'athletic', diet: 'vegetarian', smokes: 'never', gender: 'female', looking_for: 'dating,friendship', self_summary: 'I have been living in NYC for about six years. I am witty, funny, and sometimes wild. I like to laugh and to learn new things', birthdate: '08-01-1992', pets: 'have a cat,love dogs')
 
+user8 = User.create(username: 'georgia', email: 'georgia@georgia.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft5', body_type: 'buff', diet: 'anything goes', smokes: 'sometimes', gender: 'trans', looking_for: 'dating,friendship,community building,family', birthdate: '08-01-1985', pets: 'have a bird,love cats')
+
 Photo.delete_all
 
 photo1 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'This was taken last year in Hawaii', user_id: user1.id)
@@ -41,6 +43,10 @@ photo6 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', user_id: user
 photo7 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No comment. LOL.', user_id: user7.id)
 
 photo7a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'In Savannah, Georgia', user_id: user7.id)
+
+photo8 = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'No comment. LOL.', user_id: user8.id)
+
+photo8a = Photo.create(image_url: 'http://i.imgur.com/KOGp5GE.png', description: 'In Savannah, Georgia', user_id: user8.id)
 
 
 Message.delete_all
@@ -66,10 +72,11 @@ user3.posts << post2
 Interest.delete_all
 
 interest1 = Interest.create(interest: "dating")
-interest2 = Interest.create(interest: "hook-ups")
-interest3 = Interest.create(interest: "friendship")
-interest4 = Interest.create(interest: "networking")
-interest5 = Interest.create(interest: "events")
+interest2 = Interest.create(interest: "flings")
+interest3 = Interest.create(interest: "friends")
+interest4 = Interest.create(interest: "activity partners")
+interest5 = Interest.create(interest: "family & kids")
+interest6 = Interest.create(interest: "community building")
 
 user1.interests << interest1
 user2.interests << interest1
@@ -78,6 +85,7 @@ user4.interests << interest5
 user5.interests << interest3
 user6.interests << interest2
 user7.interests << interest2
+user8.interests << interest6
 
 
 
