@@ -1,10 +1,10 @@
 html {
-  background: url(splash_page_view.png) no-repeat center center fixed;
+/*  background: url(splash_page_view.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  background-color: rgba(240,  232, 209 , 1);
+  background-size: cover;*/
+  background-color: rgba(247,  243, 229  , 1);
 
 }
 
