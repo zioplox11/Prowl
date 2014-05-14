@@ -5,15 +5,15 @@ var MaincontainerViews = Backbone.Router.extend({
   },
 
   routes: {
-    "community_bulletin/:borough" :       "communityBulletin",
-    "my_matches/:id" :                             "viewMyMatches",
-    "my_messages/:id" :                           "viewMyMessages",
-    "family_and_kids_forum/:borough" :   "familyKidsForum",
-    "my_profile/:id" :                                 "viewMyProfile",
+    "community_bulletin/:borough"    :       "communityBulletin",
+    "my_matches/:id"                 :       "viewMyMatches",
+    "my_messages/:id"                :       "viewMyMessages",
+    "family_and_kids_forum/:borough" :       "familyKidsForum",
+    "my_profile/:id"                 :       "viewMyProfile",
     "browse_profiles_near_me/:latitude/:longitude" : "localProfiles",
     "search_for_a_profile/:username" :       "profileSearch",
-    "my_account_details/:id" :                    "myAccountDetails",
-    "view_full_profile/:id",                          "viewFullProfile"
+    "my_account_details/:id"         :       "myAccountDetails",
+    "view_full_profile/:id"          :       "viewFullProfile"
   },
 
   communityBulletin function(borough) {

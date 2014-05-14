@@ -66,25 +66,11 @@ class User < ActiveRecord::Base
                   :class_name => 'ProfileView',
                   :foreign_key => 'viewed_id'
 
-
-
-  def find_or_create_from_auth_hash(auth_hash)
-    user = User.find_by(email: auth_hash['info']['email'])
-    if user
-      user.update(
-        fb_token:      auth_hash['credentials']['token'],
-        fb_expiration: auth_hash['credentials']['token']
-        )
-      return user
-    else
-      User.new(
-        username:      auth_hash['info']['email'],
-        email:         auth_hash['info']['email'],
-        fb_token:      auth_hash['credentials']['token'],
-        fb_expiration: auth_hash['credentials']['token']
-        )
-    end
-
-  end
+  # CUSTOM VALIDATOR FOR LATER
+  # def has_facebook_token_or_secure_password
+  #   if fb_token.nil?
+  #     errors.add()
+  #   end
+  # end
 
 end
