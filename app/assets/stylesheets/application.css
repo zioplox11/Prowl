@@ -10,19 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-*= require_relative ../../fonts/GOTHAM/Gotham/1
+
  *= require_tree .
  *= require style
  *= require_self
  */
-
-
- @font-face {
-    font-family: 'gotham_sansrounded';
-    src: url('/assets/fonts/GOTHAM/Gotham_Rounded/1/GothamRnd-Book.otf');
-    font-weight: normal;
-    font-style: normal;
-}
 
 html {
   font-family: 'gotham_sansrounded';
