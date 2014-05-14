@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20140514130235) do
     t.date     "birthdate"
     t.string   "email"
     t.string   "gender"
+    t.string   "borough"
+    t.string   "neighborhood"
     t.boolean  "admin_status",        default: false
     t.string   "ethnicity"
     t.string   "diet"
