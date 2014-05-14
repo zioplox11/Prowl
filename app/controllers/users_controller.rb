@@ -59,6 +59,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def matches
+    s
+    @matches = User.where()
+    render json: @matches
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

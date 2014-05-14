@@ -5,7 +5,8 @@
 #  id                  :integer          not null, primary key
 #  username            :string(255)
 #  password_digest     :string(255)
-#  height              :integer
+#  height              :string(255)
+#  sexual_orientation  :string(255)
 #  body_type           :string(255)
 #  birthdate           :date
 #  email               :string(255)
@@ -29,6 +30,9 @@
 #  looking_for         :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
+#  fb_token            :string(255)
+#  fb_expiration       :integer
+#  zip                 :integer
 #
 
 class User < ActiveRecord::Base
@@ -54,6 +58,15 @@ class User < ActiveRecord::Base
                 :class_name => 'Message',
                 :foreign_key => 'sender_id'
 
+  has_many :other_profile_views,
+                  :class_name => 'ProfileView',
+                  :foreign_key => 'viewer_id'
+
+  has_many :who_have_viewed_my_profile,
+                  :class_name => 'ProfileView',
+                  :foreign_key => 'viewed_id'
+
+  # CUSTOM VALIDATOR FOR LATER
   # def has_facebook_token_or_secure_password
   #   if fb_token.nil?
   #     errors.add()

@@ -104,7 +104,7 @@ html {
   display:none;
 }
 
-#my_profile {
+#main_profile{
   border: 2px solid teal;
   position:relative;
 /*  display: inline-block;*/
