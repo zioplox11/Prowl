@@ -8,21 +8,21 @@
 
 User.delete_all
 
-user1 = User.create(username: 'admin', email: 'admin@admin.com', password: '12345678', password_confirmation: '12345678', admin_status: true)
+user1 = VanillaUser.create(username: 'admin', email: 'admin@admin.com', password: '12345678', password_confirmation: '12345678', admin_status: true)
 
-user2 = User.create(username: 'molly', email: 'molly@molly.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
+user2 = VanillaUser.create(username: 'molly', email: 'molly@molly.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 
-user3 = User.create(username: 'megan', email: 'megan@megan.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
+user3 = VanillaUser.create(username: 'megan', email: 'megan@megan.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 
-user4 = User.create(username: 'sarah', email: 'sarah@sarah.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
+user4 = VanillaUser.create(username: 'sarah', email: 'sarah@sarah.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 
-user5 = User.create(username: 'alison', email: 'alison@alison.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft4', body_type: 'slim', diet: 'vegan', smokes: 'never', zodiac_sign: 'Leo', gender: 'female', looking_for: 'dating,friendship,events', self_summary: 'I have been living in NYC for about six years. I am witty, funny, and sometimes wild. I like to laugh and to learn new things', birthdate: '08-01-1988')
+user5 = VanillaUser.create(username: 'alison', email: 'alison@alison.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft4', body_type: 'slim', diet: 'vegan', smokes: 'never', zodiac_sign: 'Leo', gender: 'female', looking_for: 'dating,friendship,events', self_summary: 'I have been living in NYC for about six years. I am witty, funny, and sometimes wild. I like to laugh and to learn new things', birthdate: '08-01-1988')
 
-user6 = User.create(username: 'gretchen', email: 'gretchen@gretchen.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft8', body_type: 'husky', diet: 'anything', smokes: 'socially', gender: 'trans', looking_for: 'dating,friendship,networking', self_summary: 'I have been to every state in the contiguous United States.', birthdate: '03-01-1988')
+user6 = VanillaUser.create(username: 'gretchen', email: 'gretchen@gretchen.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft8', body_type: 'husky', diet: 'anything', smokes: 'socially', gender: 'trans', looking_for: 'dating,friendship,networking', self_summary: 'I have been to every state in the contiguous United States.', birthdate: '03-01-1988')
 
-user7 = User.create(username: 'pauline', email: 'pauline@pauline.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft2', body_type: 'athletic', diet: 'vegetarian', smokes: 'never', gender: 'female', looking_for: 'dating,friendship', self_summary: 'I have been living in NYC for about six years. I am witty, funny, and sometimes wild. I like to laugh and to learn new things', birthdate: '08-01-1992', pets: 'have a cat,love dogs')
+user7 = VanillaUser.create(username: 'pauline', email: 'pauline@pauline.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft2', body_type: 'athletic', diet: 'vegetarian', smokes: 'never', gender: 'female', looking_for: 'dating,friendship', self_summary: 'I have been living in NYC for about six years. I am witty, funny, and sometimes wild. I like to laugh and to learn new things', birthdate: '08-01-1992', pets: 'have a cat,love dogs')
 
-user8 = User.create(username: 'georgia', email: 'georgia@georgia.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft5', body_type: 'buff', diet: 'anything goes', smokes: 'sometimes', gender: 'trans', looking_for: 'dating,friendship,community building,family', birthdate: '08-01-1985', pets: 'have a bird,love cats')
+user8 = VanillaUser.create(username: 'georgia', email: 'georgia@georgia.com', password: '12345678', password_confirmation: '12345678', admin_status: false, height: '5ft5', body_type: 'buff', diet: 'anything goes', smokes: 'sometimes', gender: 'trans', looking_for: 'dating,friendship,community building,family', birthdate: '08-01-1985', pets: 'have a bird,love cats')
 
 Photo.delete_all
 

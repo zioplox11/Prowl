@@ -35,6 +35,20 @@ class MessagesController < ApplicationController
 
   end
 
+  def find
+    current_user_id
+    other_user_id
+    query_string = "sender_id = ? AND recipient_id = ? OR sender_id = ? AND recipient_id = ?"
+    conversation = Message.where(
+      query_string,
+      current_user_id.to_s,
+      other_user_id.to_s,
+      other_user_id.to_s,
+      current_user_id.to_s
+    )
+
+  end
+
   def destroy
 
   end
