@@ -14,7 +14,7 @@ $(function(){
     events: {
       "click .update_profile" : "updateProfile",
       "change input" : "updateProfile",
-      "click .switch_profile" : "renderOwnProfileView",
+      "click .switch_profile" : "updateProfile",
       "click .change_profile" : "renderEditView",
     },
 
@@ -46,7 +46,10 @@ $(function(){
       // event.preventDefault();
       var changed = event.currentTarget;
       var value = $(event.currentTarget).val();
-      this.model.save(changed.id, value);
+      var view = this;
+      this.model.save(changed.id, value).complete(function(){
+        view.renderOwnProfileView();
+      });
     }
 
   });

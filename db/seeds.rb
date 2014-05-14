@@ -59,6 +59,23 @@ message5 = Message.create(body: 'good day', sender_id: user3.id, recipient_id: u
 message6 = Message.create(body: 'good day to you', sender_id: user5.id, recipient_id: user3.id)
 
 
+ProfileView.delete_all
+
+
+view1 = ProfileView.create(viewer_id: user1.id, viewed_id: user7.id)
+view2 = ProfileView.create(viewer_id: user1.id, viewed_id: user4.id)
+view3 = ProfileView.create(viewer_id: user1.id, viewed_id: user2.id)
+view4 = ProfileView.create(viewer_id: user7.id, viewed_id: user1.id)
+view5 = ProfileView.create(viewer_id: user7.id, viewed_id: user2.id)
+view6 = ProfileView.create(viewer_id: user2.id, viewed_id: user3.id)
+view7 = ProfileView.create(viewer_id: user3.id, viewed_id: user2.id)
+view8 = ProfileView.create(viewer_id: user5.id, viewed_id: user6.id)
+view9 = ProfileView.create(viewer_id: user5.id, viewed_id: user3.id)
+view10 = ProfileView.create(viewer_id: user5.id, viewed_id: user1.id)
+view11 = ProfileView.create(viewer_id: user3.id, viewed_id: user5.id)
+
+
+
 Post.delete_all
 
 post = Post.create(title: 'selling my couch', body: 'i have a nice couch for sale.', user_id: user4.id)

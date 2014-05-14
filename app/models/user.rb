@@ -57,6 +57,15 @@ class User < ActiveRecord::Base
                 :class_name => 'Message',
                 :foreign_key => 'sender_id'
 
+  has_many :other_profile_views,
+                  :class_name => 'ProfileView',
+                  :foreign_key => 'viewer_id'
+
+  has_many :who_have_viewed_my_profile,
+                  :class_name => 'ProfileView',
+                  :foreign_key => 'viewed_id'
+
+
 
   def find_or_create_from_auth_hash(auth_hash)
     user = User.find_by(email: auth_hash['info']['email'])
