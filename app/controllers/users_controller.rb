@@ -18,14 +18,10 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  # GET /users/1/edit
-  # def edit
-  # end
-
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = VanillaUser.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       render 'session/index'
@@ -59,12 +55,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def matches
-    s
-    @matches = User.where()
-    render json: @matches
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -73,17 +63,42 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(
+      if params[:vanilla_user]
+        user_data = params[:vanilla_user]
+      elsif params[:facebook_user]
+        user_data = params[:facebook_user]
+      end
+      user_data.permit(
         :username,
         :password,
         :password_confirmation,
         :height,
+        :sexual_orientation,
         :body_type,
         :birthdate,
         :email,
+        :gender,
+        :borough,
+        :neighborhood,
+        :ethnicity,
         :diet,
+        :drugs,
+        :drinks,
+        :smokes,
+        :zodiac_sign,
+        :education,
+        :job,
+        :income,
+        :relationship_status,
+        :relationship_type,
+        :children_family,
+        :languages,
+        :pets,
+        :self_summary,
+        :looking_for,
         :created_at,
-        :updated_at
+        :updated_at,
+        :zip
       )
     end
 end
