@@ -14,3 +14,15 @@
  *= require style
  *= require_self
  */
+
+
+ @font-face {
+    font-family: 'gotham_sansrounded';
+    src: url('/assets/GOTHAM/Gotham_Rounded/1/GothamRnd-Book.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  font-family: 'gotham_sansrounded';
+}

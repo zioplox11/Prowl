@@ -6,6 +6,7 @@
 #  username            :string(255)
 #  password_digest     :string(255)
 #  height              :string(255)
+#  sexual_orientation  :string(255)
 #  body_type           :string(255)
 #  birthdate           :date
 #  email               :string(255)
