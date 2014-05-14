@@ -80,10 +80,10 @@ Post.delete_all
 
 post = Post.create(title: 'selling my couch', body: 'i have a nice couch for sale.', user_id: user4.id, posting_category: 'community')
 post1 = Post.create(title: 'yard sale this weekend', body: 'we will have lots of great stuff. stop by.', posting_category: 'community')
-post2 = Post.create(title: 'volunteering at the food shelter', body: 'food folks and fun all for a very good cause.' posting_category: 'community')
-post3 = Post.create(title: 'moms meet up', body: 'i was thinking it would be cool for moms in sunset park to meet up and talk about their experience' posting_category: 'family')
-post4 = Post.create(title: 'thinking about starting a family', body: 'any moms out there? i am thinking about starting a family with my aprtner.' posting_category: 'family')
-post5 = Post.create(title: 'best baby formula', body: 'i am not able to breast feed my child due to a medical condition. anyone out there have any thoughts on best formulas? message me!' posting_category: 'family')
+post2 = Post.create(title: 'volunteering at the food shelter', body: 'food folks and fun all for a very good cause.', posting_category: 'community')
+post3 = Post.create(title: 'moms meet up', body: 'i was thinking it would be cool for moms in sunset park to meet up and talk about their experience', posting_category: 'family')
+post4 = Post.create(title: 'thinking about starting a family', body: 'any moms out there? i am thinking about starting a family with my aprtner.', posting_category: 'family')
+post5 = Post.create(title: 'best baby formula', body: 'i am not able to breast feed my child due to a medical condition. anyone out there have any thoughts on best formulas? message me!',posting_category: 'family')
 
 user6.posts << post1
 user3.posts << post2
