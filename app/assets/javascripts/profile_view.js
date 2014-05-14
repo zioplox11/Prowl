@@ -16,10 +16,6 @@ $(function(){
       "change input" : "updateProfile",
       "click .switch_profile" : "renderOwnProfileView",
       "click .change_profile" : "renderEditView",
-      "click .change_profile1" : "renderEditView1",
-      "click .change_profile2" : "renderEditView2",
-      "click .change_profile3" : "renderEditView3",
-      "click .change_profile4" : "renderEditView4"
     },
 
     editTemplate: _.template($("#edit_own_profile").html()),
@@ -29,30 +25,6 @@ $(function(){
     viewAnotherTemplate: _.template($("#view_another_profile").html()),
 
     renderEditView: function(){
-      this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$formEl);
-    },
-
-    renderEditView1: function(){
-      this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$formEl);
-    },
-
-    renderEditView2: function(){
-      this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$formEl);
-    },
-
-    renderEditView3: function(){
-      this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$formEl);
-    },
-
-    renderEditView4: function(){
       this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
       this.$el.empty();
       this.$el.append(this.$formEl);
