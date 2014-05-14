@@ -16,41 +16,41 @@ var MaincontainerViews = Backbone.Router.extend({
     "view_full_profile/:id"          :       "viewFullProfile"
   },
 
-  communityBulletin function(borough) {
+  communityBulletin: function(borough) {
 
-  }),
+  },
 
-  viewMyMatches function(id) {
+  viewMyMatches: function(id) {
 
-  }),
+  },
 
-  viewMyMessages function(id) {
+  viewMyMessages: function(id) {
 
-  }),
+  },
 
-  familyKidsForum function(borough) {
+  familyKidsForum: function(borough) {
 
-  }),
+  },
 
-  viewMyProfile function(id) {
+  viewMyProfile: function(id) {
 
-  }),
+  },
 
-  localProfiles function(latitude, longitude) {
+  localProfiles: function(latitude, longitude) {
 
-  }),
+  },
 
-  profileSearch function(username) {
+  profileSearch: function(username) {
 
-  }),
+  },
 
-  myAccountDetails function(id) {
+  myAccountDetails: function(id) {
 
-  }),
+  },
 
-  viewFullProfile function(id) {
+  viewFullProfile: function(id) {
 
-  }),
+  },
 
 
   index: function() {

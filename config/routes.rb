@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   get  '/logout' => 'session#destroy'
   get '/auth/facebook/callback' => 'session#create'
 
-  resources :users, only: [:create, :destroy, :update, :show, :index] do
-      resources :messages,  only: [:create, :destroy, :update, :show, :index]
-      resources :posts,  only: [:create, :destroy, :update, :show, :index]
-      resources :interests,  only: [:create, :destroy, :update, :show, :index]
-      resources :photos,  only: [:create, :destroy, :update, :show, :index]
-  end
+  resources :users, only: [:create, :destroy, :update, :show, :index]
+  resources :messages,  only: [:create, :destroy, :update, :show, :index]
+  resources :posts,  only: [:create, :destroy, :update, :show, :index]
+  resources :interests,  only: [:create, :destroy, :update, :show, :index]
+  resources :photos,  only: [:create, :destroy, :update, :show, :index]
 
 end
