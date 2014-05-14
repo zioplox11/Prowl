@@ -1,10 +1,15 @@
 html {
-  background: url(../images/splash_page_view.jpg) no-repeat center center fixed;
+  background: url(csplash_page_view.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background: rgba(240,  232, 209 , 1);
+  background-color: rgba(240,  232, 209 , 1);
+
+}
+
+h4{
+  text-align: center;
 }
 
 .remember-this-will-NOT-be-read {
@@ -75,10 +80,16 @@ html {
   border: 2px solid gray;
   position: absolute;
   width: 940px;
-  height: 80px;
+  height: 100px;
   margin: 0 auto;
   top: 0px;
   text-align: right;
+}
+
+#header_color{
+  position: absolute;
+  top: 0px;
+
 }
 
 #sub_header {

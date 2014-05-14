@@ -17,12 +17,13 @@
 
       <div id="header">
         <p id="header_logo">PROWL</p>
-          <h2>Welcome to Prowl</h2>
-          <h2>Already have an account? <strong>Sign In</strong></h2><br>
+          <p>Already have an account? <strong>Sign In</strong></p>
 
         <div id="top_header">
-          <%= link_to 'Sign Out', logout_path, id: 'signout' %>
-          <p id="sign_in"> You can sign in here </p>
+          <p id="sign_out">
+          <%= link_to 'Sign Out', logout_path, id: 'signout' %></p>
+
+<!--           <p id="sign_in"> You can sign in here </p> -->
 
 
           <div class="user_sign_in">
@@ -40,7 +41,7 @@
 
       <div id="main_splash_view">
 
-          <h2>New to Prowl? Sign Up!</h2>
+          <h4>The best place to mix and mingle with ladies locally ... and around the world.</h4>
 
           <div class="user_sign_up">
             <%= form_for(@new_user, url: users_path, method: "post") do |f| %>

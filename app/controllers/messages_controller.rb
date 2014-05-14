@@ -1,7 +1,17 @@
 class MessagesController < ApplicationController
 
-  def index
+  # /users/:id/messages
 
+  # backbone
+  # Collection.extend({
+    # url: "/messages"
+    # })
+  def index
+    # all messages to me
+    inbox = Message.where({recipient_id: current_user.id})
+    # all messages from me
+    outbox = Message.where({sender_id: current_user.id})
+    render json: inbox + outbox
     # Message.where({sender_id: user.id, recipient_id: other_user.id})
     # Message.where({sender_id: other_user.id, recipient_id: user.id})
 
