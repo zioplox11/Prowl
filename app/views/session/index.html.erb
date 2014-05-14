@@ -1,26 +1,64 @@
 
 <script>
-  $(document).ready(function(){
+  $(function(){
     currentUser = new User({id: '<%= current_user.id %>'});
     currentUser.fetch().complete(function(){
-      logInView = new LogInView({model: currentUser});
+      profileView = new ProfileView({model: currentUser});
     });
   });
 </script>
 
 
+<script id="view_own_profile" type="text/template">
+  <button class="change_profile">Edit</button>
+  <div>Username: <%%= username %></div>
+  <div>Diet: <%%= diet %></div>
+    <div>Height: <%%= height %></div>
+  <div>Body Type: <%%= body_type %></div>
+    <div>Self Summary: <%%= self_summary %></div>
+</script>
 
-<script id="view_profile" type="text/template">
+<script id="edit_own_profile" type="text/template">
+  <button class="switch_profile">Done Editing</button>
+  <div>Username: <%%= username %></div>
+    <button class="change_profile1">Edit</button>
+    <form>
+      <div>Diet: <input id="diet" name="diet" type="text" value="<%%= diet %>" /></div>
+      <button class="update_profile">Save</button>
+    </form>
+    <button class="change_profile2">Edit</button>
+    <form>
+      <div>Height: <input id="height" name="height" type="text" value="<%%= height %>" /></div>
+      <button class="update_profile">Save</button>
+    </form>
+    <button class="change_profile3">Edit</button>
+    <form>
+      <div>Body Type: <input id="body_type" name="body_type" type="text" value="<%%= body_type %>" /></div>
+      <button class="update_profile">Save</button>
+    </form>
+    <button class="change_profile4">Edit</button>
+    <form>
+      <div>Self Summary: <input id="self_summary" name="self_summary" type="text" value="<%%= self_summary %>" /></div>
+      <button class="update_profile">Save</button>
+    </form>
+
+
+</script>
+
+
+<script id="view_another_profile" type="text/template">
   <div>Username: <%%= username %></div>
   <div>Email: <%%= email %></div>
   <div>Diet: <%%= diet %></div>
 </script>
 
-<script id="edit_profile" type="text/template">
+
+<script id="edit_own_account" type="text/template">
+    <button class="change_profile">Edit</button>
     <form id="edit-profile">
       <div>Username: <input id="username" name="username" type="text" value="<%%= username %>" /></div>
       <div>Email: <input id="email" name="email" type="text" value="<%%= email %>" /></div>
       <div>Diet: <input id="diet" name="diet" type="text" value="<%%= diet %>" /></div>
-      <button>Save</button>
+      <button class="update_profile">Save</button>
     </form>
 </script>

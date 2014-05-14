@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(version: 20140513215254) do
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.integer  "height"
+    t.string   "height"
+    t.string   "sexual_orientation"
     t.string   "body_type"
     t.date     "birthdate"
     t.string   "email"

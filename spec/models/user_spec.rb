@@ -5,7 +5,7 @@
 #  id                  :integer          not null, primary key
 #  username            :string(255)
 #  password_digest     :string(255)
-#  height              :integer
+#  height              :string(255)
 #  body_type           :string(255)
 #  birthdate           :date
 #  email               :string(255)
@@ -29,6 +29,9 @@
 #  looking_for         :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
+#  fb_token            :string(255)
+#  fb_expiration       :integer
+#  zip                 :integer
 #
 
 require 'spec_helper'
