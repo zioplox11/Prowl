@@ -9,40 +9,60 @@
   </head>
 <body>
 
-  <% if flash[:error] %>
-    <div id="error"><%= flash[:error] %></div>
-  <% end %>
-  <h2>Welcome to Prowl</h2>
+  <div id="main_container">
 
-  <h2>Already have an account? <strong>Sign In</strong></h2><br>
-
-  <div class="user_sign_in">
-    <%= form_tag(login_path, method: "post") do %>
-      <%= label_tag :email %>
-      <%= text_field_tag :email %>
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-      <%= submit_tag "Sign In" %>
+    <% if flash[:error] %>
+      <div class="errors"><%= flash[:error] %></div>
     <% end %>
-  </div><br>
 
-  <h2>New to Prowl? Sign Up!</h2>
+    <div id="page_header">
 
-  <div class="user_sign_up">
-    <%= form_for(@new_user, url: users_path, method: "post") do |f| %>
-      <%= f.label :username %>
-      <%= f.text_field :username, placeholder: "Username" %> <br>
-      <%= f.label :email %>
-      <%= f.text_field :email, placeholder: "Email Address" %> <br>
-      <%= f.label :password %>
-      <%= f.password_field :password, placeholder: "Password" %> <br>
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation, placeholder: "Password" %> <br>
-      <%= f.submit "Sign Up" %>
-    <% end %>
-  </div>
+      <h2>Welcome to Prowl</h2>
+      <h2>Already have an account? <strong>Sign In</strong></h2><br>
 
-  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook_sign_up" %>
+      <div class="sign_in_user">
+        <%= form_tag(login_path, method: "post") do %>
+          <%= label_tag :email %>
+          <%= text_field_tag :email %><br>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %><br>
+          <%= submit_tag "Sign In" %>
+        <% end %>
+      </div><br><!-- // sign_in_user -->
+
+      <div id='sign_in_facebook'>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+
+        <div id="status">
+        </div>
+      </div><!-- //sign_in_facebook -->
+
+    </div><!-- // header -->
+
+    <div id='sign_up_view'>
+
+      <h2>New to Prowl? Sign Up!</h2>
+
+      <div class="sign_up_user">
+        <%= form_for(@new_user, url: users_path, method: "post") do |f| %>
+          <%= f.label :username %>
+          <%= f.text_field :username, placeholder: "Username" %> <br>
+          <%= f.label :email %>
+          <%= f.text_field :email, placeholder: "Email Address" %> <br>
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: "Password" %> <br>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation, placeholder: "Password" %> <br>
+          <%= f.submit "Sign Up" %>
+        <% end %>
+      </div><!-- // sign_up_user -->
+
+      <%= link_to "Sign Up with Facebook", "/auth/facebook", id: "sign_up_facebook" %>
+
+    </div><!-- // main_splash_view -->
+
+  </div><!-- // main_container -->
 
 </body>
 </html>
