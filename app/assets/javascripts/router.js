@@ -1,3 +1,7 @@
+$(function(){
+
+
+
 var MaincontainerViews = Backbone.Router.extend({
 
   initialize: function(){
@@ -62,5 +66,8 @@ var MaincontainerViews = Backbone.Router.extend({
   show: function(id) {
       // var user = this.collection.get(id);
   }
+
+});
+
 
 });

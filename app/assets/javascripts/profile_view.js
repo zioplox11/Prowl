@@ -7,13 +7,15 @@ $(function(){
     el: $('#main_profile'),
 
     initialize: function(){
+        console.log("new")
+        this.renderEditView();
         this.renderOwnProfileView();
         // this.listenTo(this.model, "change", this.renderOwnProfileView);
     },
 
     events: {
       "click .update_profile" : "updateProfile",
-      "click .switch_profile" : "updateProfile",
+      // "click .switch_profile" : "updateProfile",
       "click .change_profile" : "renderEditView",
       "change input"          : "changed",
       "change select"           : "changed"
@@ -51,11 +53,14 @@ $(function(){
 
     updateProfile: function(){
       this.model.save().complete(function(){
-        this.renderOwnProfileView();
+        profileView.renderOwnProfileView();
       });
     }
 
   });
+
+
+
 });
 
 

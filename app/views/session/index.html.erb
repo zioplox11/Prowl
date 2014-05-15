@@ -21,15 +21,15 @@
 <script id="edit_own_profile" type="text/template">
 
   <div>Username: <%%= username %></div>
-    <form>
       <div><button class="update_profile">Done editing</button></div>
-      <div>Diet:
+      <div>Diet: <%%= diet %>
       <select id="diet" name="diet" type="select" value="<%%= diet %>">
-        <option value="vegan">Vegan</option>
-        <option value="meat_eater">Meat Meat Meat</option>
-        <option value="anything">Anything Goes</option>
-        <option value="just _water">I prefer only H20</option>
-        <input type="submit" value="Submit">
+        <option selected><%%= diet %></option
+        <option>Vegan</option>
+        <option>Meat Meat Meat</option>
+        <option>Anything Goes</option>
+        <option>I prefer only H20</option>
+        <input type="submit" value="Save" class="update_profile">
       </select></div>
       <div>Height: <input id="height" name="height" type="text" value="<%%= height %>" /></div>
       <button class="update_profile">Save</button>
@@ -38,7 +38,6 @@
       <div>Self Summary: <input id="self_summary" name="self_summary" type="text" value="<%%= self_summary %>" /></div>
       <button class="update_profile">Save</button>
       <div><button class="update_profile">Done editing</button></div>
-    </form>
 
 
 </script>
