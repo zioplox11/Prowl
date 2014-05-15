@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
     :class_name => 'ProfileView',
     :foreign_key => 'viewer_id'
 
-  has_many :who_have_viewed_my_profile,
+  has_many :who_has_viewed_my_profile,
     :class_name => 'ProfileView',
     :foreign_key => 'viewed_id'
 
