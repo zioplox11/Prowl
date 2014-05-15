@@ -7,6 +7,11 @@
 #
 
 class Interest < ActiveRecord::Base
+
+  # validations
+  validates :interest, presence: true
+
+  # associations
   has_and_belongs_to_many :users
 
 end

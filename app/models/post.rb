@@ -13,6 +13,11 @@
 #
 
 class Post < ActiveRecord::Base
+
+  # validations
+  validates :body, :title, presence: true
+
+  # associations
   belongs_to :user
 
 end

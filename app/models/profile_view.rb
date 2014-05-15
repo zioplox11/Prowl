@@ -11,12 +11,20 @@
 #
 
 class ProfileView < ActiveRecord::Base
-  belongs_to  :viewer,
-                    :class_name => 'User',
-                    :foreign_key => 'viewer_id'
-  belongs_to  :viewed,
-                  :class_name => 'User',
-                  :foreign_key => 'viewed_id'
 
+  # validations
+  validates :viewer_id, :viewed_id,
+    numericality: {
+      only_integer: true,
+      greater_than_or_equal_to: 0
+    }
+
+  # associations
+  belongs_to  :viewer,
+    :class_name => 'User',
+    :foreign_key => 'viewer_id'
+  belongs_to  :viewed,
+    :class_name => 'User',
+    :foreign_key => 'viewed_id'
 
 end

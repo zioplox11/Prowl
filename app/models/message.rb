@@ -14,12 +14,24 @@
 #
 
 class Message < ActiveRecord::Base
+
+  # validations
+  validates :body, presence: true
+
+  validates :sender_id, :recipient_id,
+    numericality: {
+      only_integer: true,
+      greater_than_or_equal_to: 0
+       },
+    presence: true
+
+  # assocations
   belongs_to :sender,
-                    :class_name => 'User',
-                    :foreign_key => 'sender_id'
+    :class_name => 'User',
+    :foreign_key => 'sender_id'
   belongs_to  :recipient,
-                    :class_name => 'User',
-                    :foreign_key => 'recipient_id'
+    :class_name => 'User',
+    :foreign_key => 'recipient_id'
 
   def get_conversation(current_user_id, other_user_id)
     query_string = "sender_id = ? AND recipient_id = ? OR sender_id = ? AND recipient_id = ?"
@@ -33,7 +45,7 @@ class Message < ActiveRecord::Base
     return messages
   end
 
-  # inefficient sql queries here, could use some refactoring
+  # inefficient SQL queries here, could use some refactoring
   def get_inbox(current_user)
     first_set = current_user.received_messages.select(:sender_id).uniq.map { |m| m.sender_id }
     second_set = current_user.sent_messages.select(:recipient_id).uniq.map { |m| m.recipient_id }

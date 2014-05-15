@@ -38,8 +38,9 @@
 class User < ActiveRecord::Base
 
   # validations
-  validates :username, :email, presence: true
-  validates :username, :email, uniqueness: true
+  validates :username, :email,
+    uniqueness: { case_sensitive: false },
+    presence: true
 
   # associations
   has_many :photos
@@ -47,22 +48,22 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :interests
 
   has_many :received_messages,
-                :class_name => 'Message',
-                :foreign_key => 'recipient_id'
-                # :order => "messages.created_at DESC",
-                # :conditions => ["messages.recipient_deleted = ?", false]
+    :class_name => 'Message',
+    :foreign_key => 'recipient_id'
+    # :order => "messages.created_at DESC",
+    # :conditions => ["messages.recipient_deleted = ?", false]
 
   has_many :sent_messages,
-                :class_name => 'Message',
-                :foreign_key => 'sender_id'
+    :class_name => 'Message',
+    :foreign_key => 'sender_id'
 
   has_many :other_profile_views,
-                  :class_name => 'ProfileView',
-                  :foreign_key => 'viewer_id'
+    :class_name => 'ProfileView',
+    :foreign_key => 'viewer_id'
 
   has_many :who_have_viewed_my_profile,
-                  :class_name => 'ProfileView',
-                  :foreign_key => 'viewed_id'
+    :class_name => 'ProfileView',
+    :foreign_key => 'viewed_id'
 
   def self.random_username(auth_hash)
     found_name = false
@@ -78,18 +79,19 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_from_auth_hash(auth_hash)
     user = User.find_by(email: auth_hash['info']['email'])
+    token = auth_hash['credentials']['token']
+    expiration_time = auth_hash['credentials']['expires_at']
     if user
       user.update(
-        fb_token:      auth_hash['credentials']['token'],
-        fb_expiration: auth_hash['credentials']['expires_at']
+        fb_token:      token,
+        fb_expiration: expiration_time
         )
     else
-      random_password = Array.new(14).map { (65 + rand(58)).chr }.join
       user = FacebookUser.create(
         username:      User.random_username(auth_hash),
         email:         auth_hash['info']['email'],
-        fb_token:      auth_hash['credentials']['token'],
-        fb_expiration: auth_hash['credentials']['expires_at']
+        fb_token:      token,
+        fb_expiration: expiration_time
         )
     end
     return user
