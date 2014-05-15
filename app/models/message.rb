@@ -56,4 +56,20 @@ class Message < ActiveRecord::Base
     return inbox
   end
 
+  # THIS GETS THE META IN A CUSTOM OBJECT NEEDS A CUSTOM AJAX NO FETCH
+  # def self.get_message_metadata
+  #   messages = Message.includes(:sender => :photos, :recipient => :photos)
+  #   messages.map do |message|
+  #     {
+  #       sender_user: message.sender.username,
+  #       receiver_user: message
+  #       sender_id:
+  #       recipient_id:
+  #       body:
+  #       other_user_image_url:
+  #     }
+  #     message.sender.
+  #   end
+  end
+
 end
