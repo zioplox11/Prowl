@@ -8,9 +8,9 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-        format.json { render json: {status: "successfully created!"} }
+      render json: { status: "successfully created!" }
     else
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+      render json: @photo.errors, status: :unprocessable_entity
     end
   end
 
@@ -20,21 +20,22 @@ class PhotosController < ApplicationController
 
   def destroy
     if @photo.destroy
-      format.json { render json: {status: "successfully deleted!"} }
-    else
-      format.json { render json: @photo.errors, status: :unprocessable_entity }
+      render json: { status: "successfully deleted!" }
+    elses
+      render json: @photo.errors, status: :unprocessable_entity
     end
   end
 
   def update
     if @photo.update(photo_params)
-      format.json { render json: {status: "successfully updated!"} }
+      render json: { status: "successfully updated!" }
     else
-      format.json { render json: @photo.errors, status: :unprocessable_entity }
+      render json: @photo.errors, status: :unprocessable_entity
     end
   end
 
   private
+
     def set_photo
       @photo = Photo.find(params[:id])
     end

@@ -13,7 +13,7 @@ $(function(){
 
     events: {
       "click .update_profile" : "updateProfile",
-      "change input" : "updateProfile",
+      "change input"          : "updateProfile",
       "click .switch_profile" : "updateProfile",
       "click .change_profile" : "renderEditView",
     },

@@ -8,9 +8,9 @@ class InterestsController < ApplicationController
   def create
     @interest = Interest.new
     if @interest.save
-        format.json { render json: {status: "successfully added!"} }
+      render json: { status: "successfully added!" }
     else
-        format.json { render json: @interest.errors, status: :unprocessable_entity }
+      render json: @interest.errors, status: :unprocessable_entity
     end
   end
 
@@ -20,17 +20,17 @@ class InterestsController < ApplicationController
 
   def destroy
     if @interest.destroy
-      format.json { render json: {status: "successfully deleted!"} }
+      render json: { status: "successfully deleted!" }
     else
-      format.json { render json: @interest.errors, status: :unprocessable_entity }
+      render json: @interest.errors, status: :unprocessable_entity
     end
   end
 
   def update
     if @interest.update(interest_params)
-      format.json { render json: {status: "successfully updated!"} }
+      render json: { status: "successfully updated!" }
     else
-      format.json { render json: @interest.errors, status: :unprocessable_entity }
+      render json: @interest.errors, status: :unprocessable_entity
     end
   end
 

@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   get  '/logout' => 'session#destroy'
   get '/auth/facebook/callback' => 'session#create'
 
-  resources :messages, only: [:create, :destroy, :index]
-  get '/messages/:id' => 'messages#conversation'
+  get '/matches'  => 'search#matches'
+  get '/search'   => 'search#search'
 
-  resources :users, only: [:create, :destroy, :update, :show, :index]
-  resources :posts, only: [:create, :destroy, :update, :show, :index]
-  resources :interests, only: [:create, :destroy, :update, :show, :index]
-  resources :photos, only: [:create, :destroy, :update, :show, :index]
+  get '/messages/:id' => 'messages#conversation'
+  resources :messages, only: [:create, :destroy, :index]
+
+  resources :users,     only: [:create, :destroy, :show, :update, :index]
+  resources :interests, only: [:create, :destroy, :show, :update]
+  resources :posts,     only: [:create, :destroy, :show, :index]
+  resources :photos,    only: [:create, :destroy, :show, :index]
 
 end

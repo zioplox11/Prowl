@@ -1,25 +1,18 @@
-# Prowl as of 5/11/14 is CRUDing through JavaScript
-# so all HTML responses and controller actions have
-# been commented out. Can be uncommented later if
-# there is need for new pages and actions to CRUD
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
-  # GET /users.json
   def index
     @users = User.all
     render json: @users
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # GET /users/:id
   def show
     render json: @user
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = VanillaUser.new(user_params)
     if @user.save
@@ -31,27 +24,22 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
+  # PATCH/PUT /users/:id
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render json: {status: "successfully updated!"} }
+        format.json { render json: { status: "successfully updated!" } }
       else
-        # format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  # DELETE /users/:id
   def destroy
     @user.destroy
     respond_to do |format|
-      # format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: 'Message was successfully deleted', status: :ok }
     end
   end
 
@@ -67,6 +55,8 @@ class UsersController < ApplicationController
         user_data = params[:vanilla_user]
       elsif params[:facebook_user]
         user_data = params[:facebook_user]
+      elsif params[:user]
+        user_data = params[:user]
       end
       user_data.permit(
         :username,

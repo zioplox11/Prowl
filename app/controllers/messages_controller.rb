@@ -1,44 +1,39 @@
 class MessagesController < ApplicationController
+  before_action :set_message, only: [:conversation, :destroy]
 
-  # backbone
-  # Collection.extend({
-    # url: "/messages"
-    # })
-
+  # GET /messages
   def index
     # retrieves the most current messages for each conversation
-    inbox = get_inbox(current_user)
-    render json: inbox
-  end
-
-  def create
-    message = current_user.sent_messages.create(message_params)
-    render json: message
-
-    # testUser.sent_messages.create({body: 'So how is your job these days? Are you getting along with your boss?', recipient_id: testUser2.id})
-    # testUser2.received_messages.where({sender_id: testUser.id})
-    # testUser.sent_messages.where({sender_id: testUser2.id})
-    # testUser2.sent_messages.create({body: 'My job is going fine. Boring lately but I should not complain', recipient_id: testUser.id})
+    @inbox = get_inbox(current_user)
+    render json: @inbox
   end
 
   # GET /messages/:id (of other person)
   def conversation
-    current_user_id
-    other_user_id = params[]
-    messages = get_conversation(current_user_id, other_user_id)
-    render json: messages
+    current_user_id = current_user.id
+    other_user_id = params[:id]
+    @messages = get_conversation(current_user_id, other_user_id)
+    render json: @messages
   end
 
+  # POST /messages
+  def create
+    @message = current_user.sent_messages.new(message_params)
+    if @message.save
+      render json: 'Message sent!', status: :created
+    else
+      render json: @message.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /messages/:id (of the message)
   def destroy
-    message = Message.find_by(message_params)
-    message.delete_all
+    @message = Message.find(params[:id])
+    @message.destroy
+    render json: 'Message was successfully deleted', status: :ok
   end
 
   private
-
-    def set_photo
-      @message = Message.find(params[:id])
-    end
 
     def messages_params
       params.require(:message).permit(
@@ -52,6 +47,4 @@ class MessagesController < ApplicationController
         :read_at
       )
     end
-
-
 end

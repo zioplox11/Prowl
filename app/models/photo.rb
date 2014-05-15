@@ -12,6 +12,11 @@
 #
 
 class Photo < ActiveRecord::Base
+
+  # validations
+  validates :image_url, presence: true
+
+  # associations
   belongs_to :user
 
 end
