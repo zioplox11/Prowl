@@ -82,6 +82,7 @@ a.sign_up_facebook{
   margin-bottom: 6px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
+  color: purple;
 }
 
 .sign_up_password, .sign_up_email, .sign_up_username{
@@ -94,6 +95,7 @@ a.sign_up_facebook{
   margin-bottom: 24px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
+  color: purple;
 }
 
 .label_sign_up_email, .label_sign_up_password, .label_sign_up_username{
