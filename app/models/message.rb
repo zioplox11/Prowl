@@ -20,4 +20,28 @@ class Message < ActiveRecord::Base
   belongs_to  :recipient,
                     :class_name => 'User',
                     :foreign_key => 'recipient_id'
+
+  def get_conversation(current_user_id, other_user_id)
+    query_string = "sender_id = ? AND recipient_id = ? OR sender_id = ? AND recipient_id = ?"
+    messages = Message.where(
+      query_string,
+      current_user_id.to_s,
+      other_user_id.to_s,
+      other_user_id.to_s,
+      current_user_id.to_s
+    ).order('created_at')
+    return messages
+  end
+
+  # inefficient sql queries here, could use some refactoring
+  def get_inbox(current_user)
+    first_set = current_user.received_messages.select(:sender_id).uniq.map { |m| m.sender_id }
+    second_set = current_user.sent_messages.select(:recipient_id).uniq.map { |m| m.recipient_id }
+    unique_set = [first_set, second_set].flatten.uniq
+    inbox = unique_set.map do |other_id|
+      get_conversation(current_user.id, other_id).shift
+    end
+    return inbox
+  end
+
 end
