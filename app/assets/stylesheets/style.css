@@ -214,7 +214,7 @@ h3{
   margin: 0px;
   text-align: center;
   right: 16px;
-  top: -10px;
+  top: -6px;
   display: block;
   text-decoration: none;
 /*  background-color: rgba(1,1,1,.1);
@@ -376,6 +376,19 @@ top: 26px;
   margin: 0 auto;
   text-align: center;
 /*  display:none;*/
+}
+
+.tiny_online{
+  position: absolute;
+  top:78px;
+  left:30px;
+  width: 42%;
+}
+
+.my_matches_adjustment{
+  width: 95%;
+  margin-top: 22px;
+  margin-left: 12px;
 }
 
 .user_sign_up{
