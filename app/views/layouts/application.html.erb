@@ -16,11 +16,11 @@
       <p> I'm a great place for navigation </p>
 
       <ul class="left_navigation">
-        <li class="view_profile">View My Profile</li>
-        <li class="message">View My Messages</li>
-        <li class="view_matches">View My Matches</li>
-        <li class="browse_users">View Community Bulletin</li>
-        <li class="browse_users">View Family and Kids Bullentin</li>
+        <li class="view_profile"><a href="#profile">My Profile</a></li>
+        <li class="message"><a href="#messages">My Messages</a></li>
+        <li class="view_matches"><a href="#matches">My Matches</a></li>
+        <li class="browse_users"><a href="#community">Community</a></li>
+        <li class="browse_users"><a href="#family">Family</a></li>
 
       </ul> <!-- // left_navigation -->
     </div> <!-- // left_container -->
@@ -36,7 +36,7 @@
 
       <div id="top_header">
         <%= link_to 'Sign Out', logout_path, id: 'signout' %>
-        <p id="sign_in"> You can sign in here </p>
+        <p id="sign_in"><a href="#account">Settings</a></p>
       </div> <!-- // top_header -->
 
       <div id="sub_header">
