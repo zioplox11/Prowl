@@ -16,7 +16,6 @@ $(function(){
     render: function(){
       this.$el.empty();
       this.collection.each(function(message,idx){
-        debugger;
         message.set("other_user_image", "");
         message.set("other_user_name", "");
         message.set("body_sample", "");
