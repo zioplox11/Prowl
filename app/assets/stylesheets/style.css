@@ -20,7 +20,7 @@ html {
   display: inline-block;
   height: 26px;
   width: 192px;
-  top:12px;
+  top:13px;
   right: 6px;
   background-color: rgba(229, 107, 94  ,1);
   font-size: 12px;
@@ -31,7 +31,7 @@ html {
 
 a.sign_in_facebook, a.sign_up_facebook{
   position: relative;
-  top: -874px;
+  top: -860px;
   left: 752px;
   font-size: 16px;
   text-decoration: none;
@@ -40,7 +40,7 @@ a.sign_in_facebook, a.sign_up_facebook{
 
 a.sign_up_facebook{
   position: relative;
-  top: -260px;
+  top: -264px;
   left: 200px;
   font-size: 16px;
   text-decoration: none;
@@ -123,7 +123,7 @@ h3{
 #cat_logo_splash{
   position: relative;
   display: inline-block;
-  top: -344px;
+  top: -358px;
   left:-280px;
 }
 
