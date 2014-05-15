@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id                :integer          not null, primary key
+#  body              :text
+#  sender_id         :integer
+#  recipient_id      :integer
+#  sender_deleted    :boolean          default(FALSE)
+#  recipient_deleted :boolean          default(FALSE)
+#  read_at           :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 require 'spec_helper'
 
 describe Message do

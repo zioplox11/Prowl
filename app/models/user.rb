@@ -11,6 +11,8 @@
 #  birthdate           :date
 #  email               :string(255)
 #  gender              :string(255)
+#  borough             :string(255)
+#  neighborhood        :string(255)
 #  admin_status        :boolean          default(FALSE)
 #  ethnicity           :string(255)
 #  diet                :string(255)
@@ -33,6 +35,7 @@
 #  fb_token            :string(255)
 #  fb_expiration       :integer
 #  zip                 :integer
+#  profile_image_url   :text
 #
 
 class User < ActiveRecord::Base
