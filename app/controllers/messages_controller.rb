@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   def index
     # retrieves the most current messages for each conversation
-    @inbox = get_inbox(current_user)
+    @inbox = Message.get_inbox(current_user)
     render json: @inbox
   end
 
@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   def conversation
     current_user_id = current_user.id
     other_user_id = params[:id]
-    @messages = get_conversation(current_user_id, other_user_id)
+    @messages = Message.get_conversation(current_user_id, other_user_id)
     render json: @messages
   end
 
