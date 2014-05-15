@@ -23,8 +23,23 @@ $(function(){
       }.bind(this));
       // this.$el.html(this.collection.length); test for sanity
       // this.$el.append(function(){
-
       // })
+    },
+
+    fetchMetaData: function (message){
+      var other_user, photo;
+      var recipient_id = message.get('recipient_id');
+      var sender_id = message.get('sender_id');
+      var user = new User();
+      switch (currentuser.get('id')){
+        case recipient_id:
+          other_user = user.set('id', sender_id).fetch();
+          break;
+        case sender_id:
+          other_user = user.set('id', recipient_id).fetch();
+          break;
+      }
+
     }
   });
 
