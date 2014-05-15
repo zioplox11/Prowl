@@ -4,8 +4,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;*/
-  background-color: rgba(247,  243, 229  , 1);
-
+  background-color: rgba(247,  243, 229  , 1)
 }
 
 h4{
@@ -14,6 +13,16 @@ h4{
 
 .remember-this-will-NOT-be-read {
    display: none !important;
+}
+
+#top_color_bar{
+  position: absolute;
+  top: 0px;
+  left:0px;
+  height: 120px;
+  width: 100%;
+  z-index:  -1;
+  background: rgba(187, 193, 179 ,1);
 }
 
 #main_container {
@@ -60,7 +69,7 @@ h4{
 }
 
 #sign_in{
-/*  display:none;*/
+  display:none;
 }
 
 #sign_out{

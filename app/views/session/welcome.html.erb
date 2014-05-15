@@ -13,28 +13,33 @@
     <div id="error"><%= flash[:error] %></div>
   <% end %>
 
+  <div id="top_color_bar">
+  </div><!-- // top_color_bar -->
+
   <div id="main_container">
 
-    <div id="header">
-      <p id="header_logo">PROWL</p>
-        <h2>Already have an account? <strong>Sign In</strong></h2><br>
+      <div id="header">
+        <p id="header_logo">PROWL</p>
+          <h2>Already have an account? <strong>Sign In</strong></h2><br>
 
-      <div id="top_header">
-        <p id="sign_out"><%= link_to 'Sign Out', logout_path, id: 'signout' %></p>
-<!--           <p id="sign_in"> You can sign in here </p> -->
 
-        <div class="user_sign_in">
-          <%= form_tag(login_path, method: "post") do %>
-            <%= label_tag :email %>
-            <%= text_field_tag :email %>
-            <%= label_tag :password %>
-            <%= password_field_tag :password %>
-            <%= submit_tag "Sign In" %>
-          <% end %>
-        </div>
+        <div id="top_header">
+          <p id="sign_out"><%= link_to 'Sign Out', logout_path, id: 'signout' %></p>
+  <!--           <p id="sign_in"> You can sign in here </p> -->
 
-      </div> <!-- // top_header -->
-    </div> <!-- // header -->
+          <div class="user_sign_in">
+            <%= form_tag(login_path, method: "post") do %>
+              <%= label_tag :email %>
+              <%= text_field_tag :email %>
+              <%= label_tag :password %>
+              <%= password_field_tag :password %>
+              <%= submit_tag "Sign In" %>
+            <% end %>
+          </div>
+
+        </div> <!-- // top_header -->
+      </div> <!-- // header -->
+
 
     <div id="main_splash_view">
 
