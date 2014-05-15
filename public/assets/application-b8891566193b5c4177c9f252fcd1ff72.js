@@ -10753,6 +10753,47 @@ var app = {
 $(function(){
 
 });
+var Message, MessagesView, MessageList;
+
+$(function(){
+
+  Message = Backbone.Model.extend({});
+
+  MessageList = Backbone.Collection.extend({
+    url: '/messages',
+    model: Message
+  });
+
+  MessagesView = Backbone.View.extend({
+    el: $('#main_inbox'),
+    className: 'inbox',
+    template: _.template(JST['templates/message_view']),
+    render: function(){
+      this.$el.empty();
+      this.collection.each(function(message,idx){
+        message.set("other_user_image", "");
+        message.set("other_user_name", "");
+        message.set("body_sample", "");
+        this.$el.append(this.template(message.toJSON()));
+      }.bind(this));
+      // this.$el.html(this.collection.length); test for sanity
+      // this.$el.append(function(){
+
+      // })
+    }
+  });
+
+  // $('#main_profile').hide();
+  // var inbox = new MessageList();
+
+  // var inboxView = new MessagesView({collection: inbox});
+
+  // inbox.fetch().complete(function(){
+  //   inboxView.render();
+  // })
+
+
+});
 var ProfileView, profileView;
 
 $(function(){
@@ -10768,9 +10809,9 @@ $(function(){
 
     events: {
       "click .update_profile" : "updateProfile",
-      "change input" : "updateProfile",
       "click .switch_profile" : "updateProfile",
       "click .change_profile" : "renderEditView",
+      "change input"          : "changed"
     },
 
     editTemplate: _.template($("#edit_own_profile").html()),
@@ -10797,13 +10838,15 @@ $(function(){
       this.$el.append(this.$viewEl);
     },
 
-    updateProfile: function(event){
-      // event.preventDefault();
+    changed: function(event){
       var changed = event.currentTarget;
       var value = $(event.currentTarget).val();
-      var view = this;
-      this.model.save(changed.id, value).complete(function(){
-        view.renderOwnProfileView();
+      this.model.set(changed.id, value);
+    },
+
+    updateProfile: function(){
+      this.model.save().complete(function(){
+        this.renderOwnProfileView();
       });
     }
 
@@ -10912,6 +10955,32 @@ var MaincontainerViews = Backbone.Router.extend({
 // });
 
 
+(function() { this.JST || (this.JST = {}); this.JST["templates/account_view"] = '';
+}).call(this);
+'<ul class="inbox_entry">\
+  <li class="messages_mini_photo"><%= other_user_image %></li>\
+  <li class="messages_user_name"><%= other_user_name %></li>\
+  <li class="messages_body_sample"><%= body_sample %></li>\
+  <li class="messages_time"><%= time_stamp %></li>\
+</ul>'
+;
+(function() { this.JST || (this.JST = {}); this.JST["templates/match_view"] = '';
+}).call(this);
+(function() { this.JST || (this.JST = {}); this.JST["templates/message_preview"] = '';
+}).call(this);
+(function() { this.JST || (this.JST = {}); this.JST["templates/message_view"] = '<ul class="inbox_entry"> \
+    <li class="messages_mini_photo"><%= other_user_image %></li>\
+    <li class="messages_user_name"><%= other_user_name %></li>\
+    <li class="messages_body_sample"><%= body_sample %></li>\
+    <li class="messages_time"><%= time_stamp %></li>\
+  </ul>';
+}).call(this);
+(function() { this.JST || (this.JST = {}); this.JST["templates/mini_view"] = '';
+}).call(this);
+(function() { this.JST || (this.JST = {}); this.JST["templates/profile_view"] = '';
+}).call(this);
+(function() { this.JST || (this.JST = {}); this.JST["templates/template"] = "<p>Hi <%= username %></p>";
+}).call(this);
 var User, user, currentUser;
 
 User = Backbone.Model.extend({

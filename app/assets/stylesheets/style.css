@@ -74,7 +74,7 @@ a.sign_up_facebook{
 
 .sign_in_password, .sign_in_email, .sign_in_username{
   height: 18px;
-  width: 180px;
+  width: 166px;
   position: relative;
   top: 15px;
   margin-right: 6px;
@@ -82,12 +82,15 @@ a.sign_up_facebook{
   margin-bottom: 6px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
-  color: purple;
+  color: rgba(53,  14,  187   ,1);
+  font-size: 14px;
+  padding-left: 14px;
+  letter-spacing: .03em;
 }
 
 .sign_up_password, .sign_up_email, .sign_up_username{
   height: 24px;
-  width: 194px;
+  width: 184px;
   position: relative;
   top: -92px;
   margin-right: 10px;
@@ -95,7 +98,10 @@ a.sign_up_facebook{
   margin-bottom: 24px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
-  color: purple;
+  font-size: 14px;
+  padding-left: 14px;
+  color: rgba(53 , 14,  187  ,1);
+  letter-spacing: .03em;
 }
 
 .label_sign_up_email, .label_sign_up_password, .label_sign_up_username{
@@ -159,19 +165,19 @@ h3{
   width: 960px;
   margin: 0 auto;
   top: 0px;
-  left: 0px;
+  left: -20px;
 }
 
 
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1380px) {
     #right_container { display: none; };
 }
 
 #right_container{
-  border: 2px solid green;
+/*  border: 2px solid green;*/
   position: fixed;
   top: 20px;
-  right: 10px;
+  right: 36px;
   width: 200px;
   height: 700px;
   margin: 0 auto;
@@ -179,7 +185,8 @@ h3{
 }
 
 #left_container{
-  border: 2px solid purple;
+/*  border: 2px solid purple;*/
+  cursor: pointer;
   left: 10px;
   width: 180px;
   position: absolute;
@@ -189,18 +196,29 @@ h3{
 /*  display:none;*/
 }
 
+
+.left_navigation img:hover{
+    opacity:0.4;
+}
+
+.header a:link, a:visited, a:active {
+  color: rgba(134 ,77 , 96, 1  );
+  text-decoration: none;
+}
+
+
 .left_navigation li{
   height: 120px;
-  width: 120px;
+  width: 100px;
   padding: 0px;
   margin: 0px;
   text-align: center;
-  right: 10px;
-  top: -10px;
+  right: 16px;
+  top: -6px;
   display: block;
   text-decoration: none;
-  background-color: rgba(1,1,1,.1);
-  border: 1px solid black;
+/*  background-color: rgba(1,1,1,.1);
+  border: 1px solid black;*/
 
 }
 
@@ -244,6 +262,11 @@ h3{
 
 .interests_nav_splash, .interests_nav_main{
   display: block;
+}
+
+.interests_nav_main li:hover{
+    opacity:0.4;
+    cursor: pointer;
 }
 
 .interests_nav_main{
@@ -314,7 +337,7 @@ top: 26px;
 }
 
 #main_profile{
-  border: 2px solid teal;
+/*  border: 2px solid teal;*/
   position:relative;
 /*  display: inline-block;*/
   width: 750px;
@@ -327,7 +350,7 @@ top: 26px;
 }
 
 .local_user {
-  border: 2px solid yellow;
+/*  border: 2px solid yellow;*/
   position:relative;
   display: inline-block;
   width: 240px;
@@ -355,6 +378,19 @@ top: 26px;
 /*  display:none;*/
 }
 
+.tiny_online{
+  position: absolute;
+  top:78px;
+  left:30px;
+  width: 42%;
+}
+
+.my_matches_adjustment{
+  width: 95%;
+  margin-top: 22px;
+  margin-left: 12px;
+}
+
 .user_sign_up{
 top:120px;
 right:100px;
@@ -363,11 +399,11 @@ text-align: right;
 }
 
 #main_view {
-  border: 2px solid yellow;
+/*  border: 2px solid yellow;*/
   position:relative;
   display: inline-block;
   width: 750px;
-  top:-32px;
+  top:-12px;
   left: 190px;
   height: 640px;
   margin: 0 auto;

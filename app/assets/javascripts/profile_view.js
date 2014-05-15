@@ -15,7 +15,8 @@ $(function(){
       "click .update_profile" : "updateProfile",
       "click .switch_profile" : "updateProfile",
       "click .change_profile" : "renderEditView",
-      "change input"          : "changed"
+      "change input"          : "changed",
+      "change select"           : "changed"
     },
 
     editTemplate: _.template($("#edit_own_profile").html()),

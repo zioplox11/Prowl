@@ -16,42 +16,50 @@ html {
 .already_member{
   font-size: 16px;
   text-align: right;
-  margin-right: 36px;
+  margin-right: 214px;
   margin-top:-108px;
   color: rgba(229, 107, 94  ,1);
+  color: rgba(235 ,106 ,129  ,1);
+  letter-spacing: .04em;
 }
 
+
+
 .sign_in_button, .sign_up_button{
+  cursor: pointer;
   position: relative;
   display: inline-block;
-  height: 26px;
-  width: 88px;
-  top:12px;
-  right: 52px;
+  height: 24px;
+  width: 192px;
+  top:13px;
+  right: 6px;
   background-color: rgba(229, 107, 94  ,1);
-  font-size: 12px;
+  background-color: rgba(235 , 106, 129  ,1);
+  font-size: 14px;
   border-radius: 24px;
   color: rgba(187, 193, 179, 1);
-  letter-spacing: .08em;
+  letter-spacing: .12em;
 }
 
 a.sign_in_facebook, a.sign_up_facebook{
   position: relative;
-  top: -762px;
-  left: 748px;
+  top: -860px;
+  left: 752px;
   font-size: 16px;
   text-decoration: none;
+  color: black;
 }
 
 a.sign_up_facebook{
   position: relative;
-  top: -260px;
+  top: -264px;
   left: 200px;
   font-size: 16px;
   text-decoration: none;
 }
 
 .sign_up_button{
+  cursor: pointer;
   background-color: rgba(109,  166 ,150, 1);
   color: rgba(247,  243, 229  , 1);
   right: 54px;
@@ -59,6 +67,7 @@ a.sign_up_facebook{
   height: 40px;
   width: 128px;
   font-size:18px;
+  letter-spacing: .08em;
 }
 
 .label_sign_in_email, .label_sign_in_password, .label_sign_in_username{
@@ -71,7 +80,7 @@ a.sign_up_facebook{
 
 .sign_in_password, .sign_in_email, .sign_in_username{
   height: 18px;
-  width: 180px;
+  width: 166px;
   position: relative;
   top: 15px;
   margin-right: 6px;
@@ -79,24 +88,32 @@ a.sign_up_facebook{
   margin-bottom: 6px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
+  color: rgba(53,  14,  187   ,1);
+  font-size: 14px;
+  padding-left: 14px;
+  letter-spacing: .03em;
 }
 
 .sign_up_password, .sign_up_email, .sign_up_username{
   height: 24px;
-  width: 194px;
+  width: 184px;
   position: relative;
-  top: -86px;
+  top: -92px;
   margin-right: 10px;
   padding-right: 6px;
   margin-bottom: 24px;
   background-color: rgba(192,  192, 192 , 1);
   border-radius: 24px;
+  font-size: 14px;
+  padding-left: 14px;
+  color: rgba(53 , 14,  187  ,1);
+  letter-spacing: .03em;
 }
 
 .label_sign_up_email, .label_sign_up_password, .label_sign_up_username{
   font-size: 14px;
   position: relative;
-  top: -85px;
+  top: -91px;
   margin-right: 10px;
   margin-bottom: 24px;
 }
@@ -107,14 +124,15 @@ a.sign_up_facebook{
 }
 
 h4{
-  margin-top: 10px;
+  margin-top: 0px;
   text-align: center;
   font-size: 18px;
   letter-spacing: -.02em;
 }
 
 h3{
-  margin-top: 10px;
+  margin-top: -14px;
+  margin-bottom: 0px;
   text-align: center;
   font-size: 28px;
   letter-spacing: -.02em;
@@ -127,8 +145,8 @@ h3{
 #cat_logo_splash{
   position: relative;
   display: inline-block;
-  top: -344px;
-  left:-260px;
+  top: -358px;
+  left:-280px;
 }
 
 .splash_logo{
@@ -153,14 +171,19 @@ h3{
   width: 960px;
   margin: 0 auto;
   top: 0px;
-  left: 0px;
+  left: -20px;
+}
+
+
+@media all and (max-width: 1380px) {
+    #right_container { display: none; };
 }
 
 #right_container{
-  border: 2px solid green;
+/*  border: 2px solid green;*/
   position: fixed;
   top: 20px;
-  right: 10px;
+  right: 36px;
   width: 200px;
   height: 700px;
   margin: 0 auto;
@@ -168,7 +191,8 @@ h3{
 }
 
 #left_container{
-  border: 2px solid purple;
+/*  border: 2px solid purple;*/
+  cursor: pointer;
   left: 10px;
   width: 180px;
   position: absolute;
@@ -176,6 +200,32 @@ h3{
   height: 900px;
   margin: 0 auto;
 /*  display:none;*/
+}
+
+
+.left_navigation img:hover{
+    opacity:0.4;
+}
+
+.header a:link, a:visited, a:active {
+  color: rgba(134 ,77 , 96, 1  );
+  text-decoration: none;
+}
+
+
+.left_navigation li{
+  height: 120px;
+  width: 100px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  right: 16px;
+  top: -6px;
+  display: block;
+  text-decoration: none;
+/*  background-color: rgba(1,1,1,.1);
+  border: 1px solid black;*/
+
 }
 
 #place_holder_leftside {
@@ -190,7 +240,7 @@ h3{
 }
 
 #sign_in{
-  display:none;
+  /*display:none;*/
 }
 
 #sign_out{
@@ -201,7 +251,7 @@ h3{
 /*  border: 2px solid red;*/
   position: relative;
   width: 950px;
-  height: 140px;
+  height: 180px;
   margin: 0 auto;
   top: 0px;
 }
@@ -216,21 +266,67 @@ h3{
   text-align: right;
 }
 
+.interests_nav_splash, .interests_nav_main{
+  display: block;
+}
+
+.interests_nav_main li:hover{
+    opacity:0.4;
+    cursor: pointer;
+}
+
+.interests_nav_main{
+}
+
+.activities_main{
+  color: rgba( 146,  166, 84 , 1);
+}
+.fam_kids_main{
+  color: rgba( 70 ,207 ,167 , 1);
+}
+.dating_main{
+  color: rgba( 108 , 71 , 81   , 1);
+}
+.friends_main{
+  color: rgba( 225,  140, 116 , 1);
+}
+.community_main{
+  color: rgba( 97 ,163, 155, 1 );
+
+}
+.flings_main{
+  color: rgba(140, 137, 124 , 1 );
+}
+
+.interests_nav_splash li, .interests_nav_main li{
+  display:inline-block;
+  margin-right: 64px;
+  left: 62px;
+
+}
+
 #header_color{
   position: absolute;
   top: 0px;
 
 }
 
-#sub_header {
-  border: 2px solid yellow;
+#sub_header_main, #sub_header {
+/*  border: 2px solid yellow;*/
   position:relative;
   display: block;
   width: 940px;
   height: 40px;
   margin: 0 auto;
-  top: 40px;
+  top: 64px;
 /*  display:none;*/
+/*  background-color: black;*/
+}
+
+
+#sub_header_main {
+/*  border: 2px solid yellow;*/
+top: 26px;
 }
 
 #local_users {
@@ -247,7 +343,7 @@ h3{
 }
 
 #main_profile{
-  border: 2px solid teal;
+/*  border: 2px solid teal;*/
   position:relative;
 /*  display: inline-block;*/
   width: 750px;
@@ -260,7 +356,7 @@ h3{
 }
 
 .local_user {
-  border: 2px solid yellow;
+/*  border: 2px solid yellow;*/
   position:relative;
   display: inline-block;
   width: 240px;
@@ -288,6 +384,19 @@ h3{
 /*  display:none;*/
 }
 
+.tiny_online{
+  position: absolute;
+  top:78px;
+  left:30px;
+  width: 42%;
+}
+
+.my_matches_adjustment{
+  width: 95%;
+  margin-top: 22px;
+  margin-left: 12px;
+}
+
 .user_sign_up{
 top:120px;
 right:100px;
@@ -296,11 +405,11 @@ text-align: right;
 }
 
 #main_view {
-  border: 2px solid yellow;
+/*  border: 2px solid yellow;*/
   position:relative;
   display: inline-block;
   width: 750px;
-  top:0px;
+  top:-12px;
   left: 190px;
   height: 640px;
   margin: 0 auto;
