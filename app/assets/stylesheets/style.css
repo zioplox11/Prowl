@@ -13,20 +13,26 @@ html {
   margin-right: 214px;
   margin-top:-108px;
   color: rgba(229, 107, 94  ,1);
+  color: rgba(235 ,106 ,129  ,1);
+  letter-spacing: .04em;
 }
 
+
+
 .sign_in_button, .sign_up_button{
+  cursor: pointer;
   position: relative;
   display: inline-block;
-  height: 26px;
+  height: 24px;
   width: 192px;
   top:13px;
   right: 6px;
   background-color: rgba(229, 107, 94  ,1);
-  font-size: 12px;
+  background-color: rgba(235 , 106, 129  ,1);
+  font-size: 14px;
   border-radius: 24px;
   color: rgba(187, 193, 179, 1);
-  letter-spacing: .08em;
+  letter-spacing: .12em;
 }
 
 a.sign_in_facebook, a.sign_up_facebook{
@@ -47,6 +53,7 @@ a.sign_up_facebook{
 }
 
 .sign_up_button{
+  cursor: pointer;
   background-color: rgba(109,  166 ,150, 1);
   color: rgba(247,  243, 229  , 1);
   right: 54px;
@@ -54,6 +61,7 @@ a.sign_up_facebook{
   height: 40px;
   width: 128px;
   font-size:18px;
+  letter-spacing: .08em;
 }
 
 .label_sign_in_email, .label_sign_in_password, .label_sign_in_username{
@@ -152,6 +160,11 @@ h3{
   left: 0px;
 }
 
+
+@media all and (max-width: 1400px) {
+    #right_container { display: none; };
+}
+
 #right_container{
   border: 2px solid green;
   position: fixed;
@@ -172,6 +185,21 @@ h3{
   height: 900px;
   margin: 0 auto;
 /*  display:none;*/
+}
+
+.left_navigation li{
+  height: 120px;
+  width: 120px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  right: 10px;
+  top: -10px;
+  display: block;
+  text-decoration: none;
+  background-color: rgba(1,1,1,.1);
+  border: 1px solid black;
+
 }
 
 #place_holder_leftside {
@@ -225,6 +253,9 @@ h3{
 .fam_kids_main{
   color: rgba( 70 ,207 ,167 , 1);
 }
+.dating_main{
+  color: rgba( 108 , 71 , 81   , 1);
+}
 .friends_main{
   color: rgba( 225,  140, 116 , 1);
 }
@@ -239,7 +270,8 @@ h3{
 .interests_nav_splash li, .interests_nav_main li{
   display:inline-block;
   margin-right: 64px;
-  left: 116px;
+  left: 62px;
+
 }
 
 #header_color{
@@ -248,7 +280,7 @@ h3{
 
 }
 
-#sub_header {
+#sub_header_main, #sub_header {
 /*  border: 2px solid yellow;*/
   position:relative;
   display: block;
@@ -258,6 +290,12 @@ h3{
   top: 64px;
 /*  display:none;*/
 /*  background-color: black;*/
+}
+
+
+#sub_header_main {
+/*  border: 2px solid yellow;*/
+top: 26px;
 }
 
 #local_users {
@@ -327,7 +365,7 @@ text-align: right;
   position:relative;
   display: inline-block;
   width: 750px;
-  top:0px;
+  top:-32px;
   left: 190px;
   height: 640px;
   margin: 0 auto;
