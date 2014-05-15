@@ -11,6 +11,9 @@
 
   <%= yield %>
 
+  <div id="top_color_bar">
+  </div><!-- // top_color_bar -->
+
   <div id="main_container">
     <div id="left_container">
       <p> I'm a great place for navigation </p>
@@ -32,16 +35,22 @@
 
 
     <div id="header">
-      <p id="header_logo">PROWL</p>
+        <p id="header_logo"><img class="header_logo" src="assets/Prowl_LOGO.png" alt="Prowl Logo" width="18%" height="18%"></p>
 
       <div id="top_header">
         <%= link_to 'Sign Out', logout_path, id: 'signout' %>
         <p id="sign_in"><a href="#account">Settings</a></p>
       </div> <!-- // top_header -->
 
-      <div id="sub_header">
-        <p> I'm a good place for a navigation bar, log-in and log-out etc.</p>
-      </div> <!-- // sub_header -->
+        <div id="sub_header">
+          <ul class="interests_nav_main">
+            <li class="activities_main">activity partners</li>
+            <li class="fam_kids_main">family & kids</li>
+            <li class="friends_main">friends</li>
+            <li class="community_main">community building</li>
+            <li class="flings_main">flings</li>
+          </ul> <!-- // interests_nav -->
+        </div> <!-- // sub_header -->
 
     </div> <!-- // header -->
 
