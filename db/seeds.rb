@@ -55,6 +55,7 @@ message1 = Message.create(body: 'testing the waters', sender_id: user1.id, recip
 message2 = Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user2.id)
 message3 = Message.create(body: 'testing the waters yet again', sender_id: user1.id, recipient_id: user2.id)
 message4 = Message.create(body: 'hi there', sender_id: user2.id, recipient_id: user1.id)
+
 message5 = Message.create(body: 'good day', sender_id: user3.id, recipient_id: user5.id)
 message6 = Message.create(body: 'good day to you', sender_id: user5.id, recipient_id: user3.id)
 

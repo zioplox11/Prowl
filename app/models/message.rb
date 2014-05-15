@@ -33,7 +33,7 @@ class Message < ActiveRecord::Base
     :class_name => 'User',
     :foreign_key => 'recipient_id'
 
-  def get_conversation(current_user_id, other_user_id)
+  def self.get_conversation(current_user_id, other_user_id)
     query_string = "sender_id = ? AND recipient_id = ? OR sender_id = ? AND recipient_id = ?"
     messages = Message.where(
       query_string,
@@ -46,12 +46,12 @@ class Message < ActiveRecord::Base
   end
 
   # inefficient SQL queries here, could use some refactoring
-  def get_inbox(current_user)
+  def self.get_inbox(current_user)
     first_set = current_user.received_messages.select(:sender_id).uniq.map { |m| m.sender_id }
     second_set = current_user.sent_messages.select(:recipient_id).uniq.map { |m| m.recipient_id }
     unique_set = [first_set, second_set].flatten.uniq
     inbox = unique_set.map do |other_id|
-      get_conversation(current_user.id, other_id).shift
+      get_conversation(current_user.id, other_id)[0]
     end
     return inbox
   end
