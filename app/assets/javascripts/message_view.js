@@ -27,19 +27,19 @@ $(function(){
     },
 
     fetchMetaData: function (message){
-      var other_user, photo;
+      var other_user;
       var recipient_id = message.get('recipient_id');
       var sender_id = message.get('sender_id');
       var user = new User();
       switch (currentuser.get('id')){
         case recipient_id:
-          other_user = user.set('id', sender_id).fetch();
+          other_user = user.set('id', sender_id);
           break;
         case sender_id:
-          other_user = user.set('id', recipient_id).fetch();
+          other_user = user.set('id', recipient_id);
           break;
       }
-
+      other_user.fetch().complete()
     }
   });
 
