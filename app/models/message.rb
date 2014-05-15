@@ -70,6 +70,6 @@ class Message < ActiveRecord::Base
   #     }
   #     message.sender.
   #   end
-  end
+  # end
 
 end
