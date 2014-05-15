@@ -29,14 +29,14 @@ $(function(){
     }
   });
 
-  $('#main_profile').hide();
-  var inbox = new MessageList();
+  // $('#main_profile').hide();
+  // var inbox = new MessageList();
 
-  var inboxView = new MessagesView({collection: inbox});
+  // var inboxView = new MessagesView({collection: inbox});
 
-  inbox.fetch().complete(function(){
-    inboxView.render();
-  })
+  // inbox.fetch().complete(function(){
+  //   inboxView.render();
+  // })
 
 
 });
