@@ -160,6 +160,11 @@ h3{
   left: 0px;
 }
 
+
+@media all and (max-width: 1400px) {
+    #right_container { display: none; };
+}
+
 #right_container{
   border: 2px solid green;
   position: fixed;
