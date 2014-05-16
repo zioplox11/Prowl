@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string      :sexual_orientation
       t.string      :body_type
       t.date        :birthdate
+      t.string      :age
       t.string      :email
       t.string      :gender
       t.string      :borough

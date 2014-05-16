@@ -67,8 +67,8 @@
   <div>Username: <%%= username %></div>
       <div><button class="update_profile">Done editing</button></div>
 
-      <div>Age: <%%= birthdate %> years old
-        <select id="birthdate" name="birthdate" type="select" value="<%%= birthdate %>">
+      <div>Age: <%%= age %> years old
+        <select id="age" name="age" type="select" value="<%%= age %>">
           <option selected><%%= birthdate %></option>
           <option>18-22</option>
           <option>23-25</option>
@@ -186,8 +186,7 @@
 
       <div>Self Summary: <input id="self_summary" name="self_summary" type="text" width="200px" value="<%%= self_summary %>" /></div>
       <button class="update_profile">Save</button>
-            <div>Main Profile Photo (must be a valid URL): <input id="profile_image_url" name="profile_image_url" type="text" value="Enter new profile photo URL here" /></div>
-
+            <div>Main Profile Photo (must be a valid URL): <input id="profile_image_url" name="profile_image_url" type="text" value="<%%= profile_image_url %>" placeholder="Enter your new profile URL here"/></div>
       <button class="update_profile">Save</button><br><br><br>
 
       <div><button class="update_profile">Done editing</button></div>

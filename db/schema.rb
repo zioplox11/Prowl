@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140514130235) do
     t.string   "sexual_orientation"
     t.string   "body_type"
     t.date     "birthdate"
+    t.string   "age"
     t.string   "email"
     t.string   "gender"
     t.string   "borough"
