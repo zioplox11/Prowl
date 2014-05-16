@@ -10754,10 +10754,10 @@ return jQuery;
 (function() { this.JST || (this.JST = {}); this.JST["templates/message_preview"] = '';
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["templates/message_view"] = '<ul class="inbox_entry"> \
-    <li class="messages_mini_photo"><%= user_image %></li>\
-    <li class="messages_user_name"><%= user_name %></li>\
-    <li class="messages_body_sample"><%= body_sample %></li>\
-    <li class="messages_time"><%= time_stamp %></li>\
+    <li class="messages_mini_photo"><%= profile_image_url %></li>\
+    <li class="messages_user_name"><%= username %></li>\
+    <li class="messages_body_sample"><%= body %></li>\
+    <li class="messages_time"><%= created_at %></li>\
   </ul>';
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["templates/mini_view"] = '';
@@ -10766,16 +10766,17 @@ return jQuery;
 }).call(this);
 
 
-$(function(){
+// $(function(){
 
-var app = {
-  init: function(){
-    Backbone.history.start();
-  }
-}
+// var app = {
+//   init: function(){
+//     Backbone.history.start();
+//   }
+// }
 
-});
-var Message, MessagesView, MessageList;
+// });
+// var Message, MessagesView, MessageList, inbox, inboxView;
+
 
 $(function(){
 
@@ -10793,49 +10794,51 @@ $(function(){
     render: function(){
       this.$el.empty();
       this.collection.each(function(message,idx){
-        message.set("other_user_image", "");
-        message.set("other_user_name", "");
-        message.set("body_sample", "");
-        this.$el.append(this.template(message.toJSON()));
+        var message_user = this.fetchMetaData(message);
       }.bind(this));
-      // this.$el.html(this.collection.length); test for sanity
-      // this.$el.append(function(){
-      // })
     },
 
     fetchMetaData: function (message){
-      var other_user;
       var recipient_id = message.get('recipient_id');
       var sender_id = message.get('sender_id');
-      var user = new User();
-      switch (currentuser.get('id')){
+      var message_user = new User();
+      var user_id = parseInt(currentUser.get('id'));
+      switch (user_id) {
         case recipient_id:
-          other_user = user.set('id', sender_id);
+          message_user.set('id', sender_id);
           break;
         case sender_id:
-          other_user = user.set('id', recipient_id);
+          message_user.set('id', recipient_id);
           break;
       }
-      other_user.fetch().complete()
+      var view = this;
+      message_user.fetch().complete(function(){
+        var messageObj = {
+          username: message_user.get('username'),
+          profile_image_url: message_user.get('profile_image_url'),
+          body: message.get('body'),
+          created_at: message.get('created_at')
+        }
+        view.$el.append(view.template(messageObj));
+      });
     }
   });
 
-  // $('#main_profile').hide();
-  // var inbox = new MessageList();
+  // inbox = new MessageList();
 
-  // var inboxView = new MessagesView({collection: inbox});
+  // inboxView = new MessagesView({collection: inbox});
 
   // inbox.fetch().complete(function(){
   //   inboxView.render();
-  // })
-
+  // });
 
 });
-var ProfileView, profileView;
+// var ProfileView, profileView;
 
 $(function(){
 
   ProfileView = Backbone.View.extend({
+    // model :User,
 
     el: $('#main_profile'),
 
@@ -10898,25 +10901,58 @@ $(function(){
 
 
 $(function(){
+  new AppRouter();
+  Backbone.history.start();
+});
 
+var Message, MessagesView, MessageList, inbox, inboxView;
+var User, user, currentUser;
+var ProfileView, profileView;
+var router;
 
-
-var MaincontainerViews = Backbone.Router.extend({
+var AppRouter = Backbone.Router.extend({
 
   initialize: function(){
-    // this.collection = new Users();
+    router = this;
+    inbox = new MessageList();
+    inboxView = new MessagesView({collection: inbox});
   },
 
   routes: {
-    "community_bulletin/:borough"    :       "communityBulletin",
-    "my_matches/:id"                 :       "viewMyMatches",
-    "my_messages/:id"                :       "viewMyMessages",
-    "family_and_kids_forum/:borough" :       "familyKidsForum",
-    "my_profile/:id"                 :       "viewMyProfile",
-    "browse_profiles_near_me/:latitude/:longitude" : "localProfiles",
-    "search_for_a_profile/:username" :       "profileSearch",
-    "my_account_details/:id"         :       "myAccountDetails",
-    "view_full_profile/:id"          :       "viewFullProfile"
+    "viewMyProfile"              : "viewMyProfile",
+    "viewMyMatches"              : "viewMyMatches",
+    "viewMyMessages"             : "viewMyMessages",
+    "localProfiles/:lat/:long"   : "localProfiles",
+    "familyKidsForum/:borough"   : "familyKidsForum",
+    "communityBulletin/:borough" : "communityBulletin"
+    // "community_bulletin/:borough"    :       "communityBulletin",
+    // "my_matches/:id"                 :       "viewMyMatches",
+    // "my_messages/:id"                :       "viewMyMessages",
+    // "family_and_kids_forum/:borough" :       "familyKidsForum",
+    // "my_profile/:id"                 :       "viewMyProfile",
+    // "browse_profiles_near_me/:latitude/:longitude" : "localProfiles",
+    // "search_for_a_profile/:username" :       "profileSearch",
+    // "my_account_details/:id"         :       "myAccountDetails",
+    // "view_full_profile/:id"          :       "viewFullProfile"
+  },
+
+  showNewView: function(newView){
+    $('#main_view').children().hide()
+    newView.$el.show();
+  },
+
+  viewMyMessages: function(id) {
+    inbox.fetch().complete(function(){
+      inboxView.render();
+      router.showNewView(inboxView);
+    });
+  },
+
+  viewMyProfile: function(id) {
+    var router = this;
+    currentUser.fetch().complete(function(){
+      router.showNewView(profileView)
+    });
   },
 
   communityBulletin: function(borough) {
@@ -10927,19 +10963,11 @@ var MaincontainerViews = Backbone.Router.extend({
 
   },
 
-  viewMyMessages: function(id) {
-
-  },
-
   familyKidsForum: function(borough) {
 
   },
 
-  viewMyProfile: function(id) {
-
-  },
-
-  localProfiles: function(latitude, longitude) {
+  localProfiles: function(lat, long) {
 
   },
 
@@ -10955,19 +10983,14 @@ var MaincontainerViews = Backbone.Router.extend({
 
   },
 
-
   index: function() {
       // this.usersView = new UsersView({collection: this.collection});
       // this.collection.fetch();
   },
 
-
   show: function(id) {
       // var user = this.collection.get(id);
   }
-
-});
-
 
 });
 // var SignUpView, signUpView;
@@ -11005,7 +11028,7 @@ var MaincontainerViews = Backbone.Router.extend({
 // });
 
 
-var User, user, currentUser;
+// var User, user, currentUser;
 
 $(function(){
 
