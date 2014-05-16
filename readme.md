@@ -17,21 +17,21 @@ Link to Prowl's dev app on [Heroku](http://prowl-dev.herokuapp.com/)
 
 ####Current Specs
 
-*User can login with Facebook verification.
-*Viewer can view own profile and update it.
-*Viewer can view conversation threads between user and other people.
+- User can login with Facebook verification.
+- Viewer can view own profile and update it.
+- Viewer can view conversation threads between user and other people.
 
 ####Future features
 
-*View my matches.
-*View community bulletin board.
-*Contribute to family and kids forum.
-*Chat with users.
-*Message users.
-*'Meow', 'Purr', and 'Hiss' at users -- Meow indicates interest in connecting, Purr indicates an enjoyable online or in-person encounter, and Hiss blocks that user from contacting you.
-*Filter intelligently by current main interest(based on top navigation bar).
-*Require at least two photos, including a clear main profile picture before having full access to site.
-*Verify through Facebook that the user in not a man.
+- View my matches.
+- View community bulletin board.
+- Contribute to family and kids forum.
+- Chat with users.
+- Message users.
+- 'Meow', 'Purr', and 'Hiss' at users -- Meow indicates interest in connecting, Purr indicates an enjoyable online or in-person encounter, and Hiss blocks that user from contacting you.
+- Filter intelligently by current main interest(based on top navigation bar).
+- Require at least two photos, including a clear main profile picture before having full access to site.
+- Verify through Facebook that the user in not a man.
 
 
 
@@ -39,9 +39,9 @@ Link to Prowl's dev app on [Heroku](http://prowl-dev.herokuapp.com/)
 
 ####Development Team:
 
-*[Rob White](https://github.com/andimrob) | [Joshua Guthals](https://github.com/zioplox11)
+- [Rob White](https://github.com/andimrob) | [Joshua Guthals](https://github.com/zioplox11)
 
-*Design by:  [Atanas Djibirov](http://cargocollective.com/nascodesign)
+- Design by:  [Atanas Djibirov](http://cargocollective.com/nascodesign)
 
 
 
