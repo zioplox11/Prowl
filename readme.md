@@ -2,13 +2,13 @@ https://travis-ci.org/zioplox11/Prowl
 
 ###Prowl v0.1.0
 
-######[![Build Status](https://travis-ci.org/zioplox11/prowl_app.svg?branch=master)](https://travis-ci.org/zioplox11/Prowl)
+######[![Build Status](https://travis-ci.org/zioplox11/prowl.svg?branch=master)](https://travis-ci.org/zioplox11/Prowl)
 
 #####A lesbian dating, sex, friendship, and social networking app for computer or smartphone.
 
 ######The best place for ladies to meet, mix, and mingle locally ... and around the world.
 
-Link to [ERD ](https://github.com/zioplox11/prowl_app/blob/master/erd.pdf)
+Link to [ERD ](https://github.com/zioplox11/prowl/blob/master/erd.pdf)
 
 Link to [Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1077142)
 
