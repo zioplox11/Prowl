@@ -2,7 +2,7 @@ https://travis-ci.org/zioplox11/Prowl
 
 ###Prowl v0.1.0
 
-######[![Build Status](https://travis-ci.org/zioplox11/prowl.svg?branch=master)](https://travis-ci.org/zioplox11/Prowl)
+######[![Build Status](https://travis-ci.org/zioplox11/Prowl.svg?branch=develop)](https://travis-ci.org/zioplox11/Prowl)
 
 #####A lesbian dating, sex, friendship, and social networking app for computer or smartphone.
 
