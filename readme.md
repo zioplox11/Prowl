@@ -1,6 +1,5 @@
-https://travis-ci.org/zioplox11/Prowl
-
 ###Prowl v0.1.0
+#####May, 2014
 
 ######[![Build Status](https://travis-ci.org/zioplox11/Prowl.svg?branch=develop)](https://travis-ci.org/zioplox11/Prowl)
 
@@ -16,15 +15,31 @@ Using real world user stories -- from a single woman in her twenties, a married 
 
 Link to Prowl's dev app on [Heroku](http://prowl-dev.herokuapp.com/)
 
-Current Specs
+####Current Specs
 
 User can login with Facebook verification.
 Viewer can view own profile and update it.
 Viewer can view conversation threads between user and other people.
 
-Development Team:
+####Future features
 
-Rob White | Joshua Guthals
+View my matches.
+View community bulletin board.
+Contribute to family and kids forum.
+Chat with users.
+Message users.
+'Meow', 'Purr', and 'Hiss' at users -- Meow indicates interest in connecting, Purr indicates an enjoyable online or in-person encounter, and Hiss blocks that user from contacting you.
+Filter intelligently by current main interest(based on top navigation bar).
+Require at least two photos, including a clear main profile picture before having full access to site.
+Verify through Facebook that the user in not a man.
+
+
+
+
+
+####Development Team:
+
+[Rob White](https://github.com/andimrob) | [Joshua Guthals](https://github.com/zioplox11)
 
 Design by:  [Atanas Djibirov](http://cargocollective.com/nascodesign)
 
