@@ -8,7 +8,7 @@
 
 User.delete_all
 
-user1 = VanillaUser.create(username: 'admin', email: 'admin@admin.com', password: '12345678', password_confirmation: '12345678', admin_status: true)
+user1 = VanillaUser.create(username: 'admin', email: 'admin@admin.com', password: '12345678', password_confirmation: '12345678', admin_status: true, profile_image_url: 'http://i.imgur.com/vTeB8gz.png')
 
 user2 = VanillaUser.create(username: 'molly', email: 'molly@molly.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 
@@ -55,9 +55,37 @@ message1 = Message.create(body: 'testing the waters', sender_id: user1.id, recip
 message2 = Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user2.id)
 message3 = Message.create(body: 'testing the waters yet again', sender_id: user1.id, recipient_id: user2.id)
 message4 = Message.create(body: 'hi there', sender_id: user2.id, recipient_id: user1.id)
-
 message5 = Message.create(body: 'good day', sender_id: user3.id, recipient_id: user5.id)
 message6 = Message.create(body: 'good day to you', sender_id: user5.id, recipient_id: user3.id)
+
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user2.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user3.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user4.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user5.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user6.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user7.id)
+Message.create(body: 'testing the waters', sender_id: user1.id, recipient_id: user8.id)
+Message.create(body: 'test message 1', sender_id: user2.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 2', sender_id: user3.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 3', sender_id: user3.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 4', sender_id: user4.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 5', sender_id: user5.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 6', sender_id: user6.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 7', sender_id: user7.id, recipient_id: user1.id)
+Message.create(body: 'test message 8', sender_id: user4.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 9', sender_id: user5.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 10', sender_id: user7.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 11', sender_id: user5.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 12', sender_id: user3.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 13', sender_id: user3.id, recipient_id: user1.id)
+Message.create(body: 'test messsage 14', sender_id: user8.id, recipient_id: user1.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user4.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user4.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user6.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user6.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user8.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user8.id)
+Message.create(body: 'testing the waters again', sender_id: user1.id, recipient_id: user2.id)
 
 
 ProfileView.delete_all

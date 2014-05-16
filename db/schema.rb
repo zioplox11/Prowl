@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20140514130235) do
     t.string   "pets"
     t.text     "self_summary"
     t.string   "looking_for"
-    t.text     "profile_image_url"
+    t.text     "profile_image_url",   default: "assets/User_Picture_Placeholder.png"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "fb_token"
