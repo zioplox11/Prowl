@@ -9,6 +9,7 @@
 #  sexual_orientation  :string(255)
 #  body_type           :string(255)
 #  birthdate           :date
+#  age                 :string(255)
 #  email               :string(255)
 #  gender              :string(255)
 #  borough             :string(255)
@@ -30,12 +31,12 @@
 #  pets                :string(255)
 #  self_summary        :text
 #  looking_for         :string(255)
+#  profile_image_url   :text             default("assets/User_Picture_Placeholder.png")
 #  created_at          :datetime
 #  updated_at          :datetime
 #  fb_token            :string(255)
 #  fb_expiration       :integer
 #  zip                 :integer
-#  profile_image_url   :text
 #
 
 class User < ActiveRecord::Base
