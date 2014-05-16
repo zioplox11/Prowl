@@ -24,6 +24,9 @@ Link to Prowl's dev app on [Heroku](http://prowl-dev.herokuapp.com/)
 ####Future features
 
 - View my matches.
+- View people currently online.
+- View people based on my geolocation and a radius.
+- View people based on another zip code, country, or city.
 - View community bulletin board.
 - Contribute to family and kids forum.
 - Chat with users.
