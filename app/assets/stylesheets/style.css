@@ -7,6 +7,18 @@ html {
   background-color: rgba(247,  243, 229  , 1)
 }
 
+.selected_interests_list{
+  margin-bottom: 20px;
+}
+
+.member_since{
+  position: relative;
+  top: -60px;
+  left: 12px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
 .already_member{
   font-size: 16px;
   text-align: right;
@@ -17,6 +29,30 @@ html {
   letter-spacing: .04em;
 }
 
+.change_profile_button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  width: 152px;
+  top:-4px;
+  left: 572px;
+  background-color: rgba(229, 107, 94  ,1);
+  background-color: rgba(235 , 106, 129  ,1);
+  font-size: 14px;
+  border-radius: 24px;
+  color: rgba(187, 193, 179, 1);
+  letter-spacing: .12em;
+}
+
+h6{
+  display: inline-block;
+  font-size: 25px;
+  margin-top: 14px;
+  margin-left: -140px;
+  text-align: left;
+
+}
 
 
 .sign_in_button, .sign_up_button{
@@ -324,7 +360,7 @@ top: 26px;
 }
 
 #local_users {
-  border: 2px solid teal;
+/*  border: 2px solid teal;*/
   position:relative;
 /*  display: inline-block;*/
   width: 750px;
@@ -349,6 +385,74 @@ top: 26px;
 /*  display:none;*/
 }
 
+#selectable_items {
+/*  border: 1px solid red;*/
+  width: 184px;
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  height: 600px;
+  vertical-align: top;
+  background-color: rgba(235 , 107 ,129 , .04);
+  border-radius: 8px;
+}
+
+.selectables{
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  left: 0px;
+  top: 4px;
+}
+
+.written{
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  left: -6px;
+  top: -6px;
+}
+
+.my_profile_picture{
+  position: relative;
+  display: inline-block;
+  top: -50px;
+  left: 12px;
+  width:31%;
+  height:31%;
+  margin-right: 8px;
+}
+
+
+#written_items {
+/*  border: 1px solid green;*/
+  width: 540px;
+  height: 600px;
+  position:relative;
+  display: inline-block;
+  top: 10px;
+  vertical-align: top;
+  margin-right: 6px;
+  background-color: rgba(120 , 62 , 248 , .03);
+  border-radius: 8px;
+}
+
+#headline_profile{
+  width: 736px;
+  height: 280px;
+  position: relative;
+  display: block;
+  top: 0px;
+  left: 0px;
+/*  border: 1px solid black;*/
+  margin-bottom: 0px;
+  background-color: rgba(168,  136, 83   , .06);
+  border-radius: 8px;
+}
+
+
 .local_user {
 /*  border: 2px solid yellow;*/
   position:relative;
@@ -366,7 +470,7 @@ top: 26px;
 }
 
 #signup_form{
-  border: 1px solid teal;
+/*  border: 1px solid teal;*/
   position:relative;
   display: inline-block;
   width: 940px;
