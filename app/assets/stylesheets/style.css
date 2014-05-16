@@ -420,8 +420,11 @@ top: 26px;
   display: inline-block;
   top: -50px;
   left: 12px;
-  width:31%;
-  height:31%;
+/*  width:31%;
+  height:31%;*/
+  width:228px;
+  height:180px;
+
   margin-right: 8px;
 }
 
