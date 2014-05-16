@@ -28,13 +28,13 @@
     <div id="written_items">
       <ul class="written">
         <li>Borough: <%%= borough %></li>
+        <li>Self Summary: <%%= self_summary %></li>
         <li>Sexual Orientation: <%%= sexual_orientation %></li>
         <li>Ethnicity: <%%= ethnicity %></li>
         <li>Gender: <%%= gender %></li>
         <li>Relationship status: <%%= relationship_status %></li>
         <li>Relationship interests: <%%= relationship_type  %></li>
         <li>My family history interests (past, current, and future): <%%= children_family  %></li>
-        <li>Self Summary: <%%= self_summary %></li>
       </ul>
     </div>
 
@@ -184,8 +184,12 @@
         </select>
       </div>
 
-      <div>Self Summary: <input id="self_summary" name="self_summary" type="text" value="<%%= self_summary %>" /></div>
+      <div>Self Summary: <input id="self_summary" name="self_summary" type="text" width="200px" value="<%%= self_summary %>" /></div>
       <button class="update_profile">Save</button>
+            <div>Main Profile Photo (must be a valid URL): <input id="profile_image_url" name="profile_image_url" type="text" value="Enter new profile photo URL here" /></div>
+
+      <button class="update_profile">Save</button><br><br><br>
+
       <div><button class="update_profile">Done editing</button></div>
 
 

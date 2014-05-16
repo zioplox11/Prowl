@@ -12,7 +12,7 @@ user1 = VanillaUser.create(username: 'admin', email: 'admin@admin.com', password
 
 user2 = VanillaUser.create(username: 'molly', email: 'molly@molly.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 
-user3 = VanillaUser.create(username: 'megan', email: 'megan@megan.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
+user3 = VanillaUser.create(username: 'megan', email: 'megan@megan.com', password: '12345678', password_confirmation: '12345678', admin_status: false, profile_image_url: 'http://i.imgur.com/SBNy4kW.png')
 
 user4 = VanillaUser.create(username: 'sarah', email: 'sarah@sarah.com', password: '12345678', password_confirmation: '12345678', admin_status: false)
 

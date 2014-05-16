@@ -1,0 +1,587 @@
+@font-face {
+  font-family: 'gotham_sansrounded';
+  src: url(/assets/GOTHAM/Gotham_Rounded/1/GothamRnd-Book.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+/*  background: url(splash_page_view.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  background-color: rgba(247,  243, 229  , 1)
+}
+
+.selected_interests_list{
+  margin-bottom: 20px;
+}
+
+.member_since{
+  position: relative;
+  top: -60px;
+  left: 12px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.already_member{
+  font-size: 16px;
+  text-align: right;
+  margin-right: 214px;
+  margin-top:-108px;
+  color: rgba(229, 107, 94  ,1);
+  color: rgba(235 ,106 ,129  ,1);
+  letter-spacing: .04em;
+}
+
+.change_profile_button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  width: 152px;
+  top:-4px;
+  left: 572px;
+  background-color: rgba(229, 107, 94  ,1);
+  background-color: rgba(235 , 106, 129  ,1);
+  font-size: 14px;
+  border-radius: 24px;
+  color: rgba(187, 193, 179, 1);
+  letter-spacing: .12em;
+}
+
+h6{
+  display: inline-block;
+  font-size: 25px;
+  margin-top: 14px;
+  margin-left: -140px;
+  text-align: left;
+
+}
+
+
+.sign_in_button, .sign_up_button{
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 192px;
+  top:13px;
+  right: 6px;
+  background-color: rgba(229, 107, 94  ,1);
+  background-color: rgba(235 , 106, 129  ,1);
+  font-size: 14px;
+  border-radius: 24px;
+  color: rgba(187, 193, 179, 1);
+  letter-spacing: .12em;
+}
+
+a.sign_in_facebook, a.sign_up_facebook{
+  position: relative;
+  top: -860px;
+  left: 752px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+a.sign_up_facebook{
+  position: relative;
+  top: -264px;
+  left: 200px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.sign_up_button{
+  cursor: pointer;
+  background-color: rgba(109,  166 ,150, 1);
+  color: rgba(247,  243, 229  , 1);
+  right: 54px;
+  top: -50px;
+  height: 40px;
+  width: 128px;
+  font-size:18px;
+  letter-spacing: .08em;
+}
+
+.label_sign_in_email, .label_sign_in_password, .label_sign_in_username{
+  font-size: 14px;
+  position: relative;
+  top:16px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+}
+
+.sign_in_password, .sign_in_email, .sign_in_username{
+  height: 18px;
+  width: 166px;
+  position: relative;
+  top: 15px;
+  margin-right: 6px;
+  padding-right: 6px;
+  margin-bottom: 6px;
+  background-color: rgba(192,  192, 192 , 1);
+  border-radius: 24px;
+  color: rgba(53,  14,  187   ,1);
+  font-size: 14px;
+  padding-left: 14px;
+  letter-spacing: .03em;
+}
+
+.sign_up_password, .sign_up_email, .sign_up_username{
+  height: 24px;
+  width: 184px;
+  position: relative;
+  top: -92px;
+  margin-right: 10px;
+  padding-right: 6px;
+  margin-bottom: 24px;
+  background-color: rgba(192,  192, 192 , 1);
+  border-radius: 24px;
+  font-size: 14px;
+  padding-left: 14px;
+  color: rgba(53 , 14,  187  ,1);
+  letter-spacing: .03em;
+}
+
+.label_sign_up_email, .label_sign_up_password, .label_sign_up_username{
+  font-size: 14px;
+  position: relative;
+  top: -91px;
+  margin-right: 10px;
+  margin-bottom: 24px;
+}
+
+.header_logo{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+h4{
+  margin-top: 0px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+
+h3{
+  margin-top: -14px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: -.02em;
+}
+
+.remember-this-will-NOT-be-read {
+  display: none !important;
+}
+
+#cat_logo_splash{
+  position: relative;
+  display: inline-block;
+  top: -358px;
+  left:-280px;
+}
+
+.splash_logo{
+  width:58%;
+  height:58%;
+}
+
+#top_color_bar{
+  position: absolute;
+  top: 0px;
+  left:0px;
+  height: 120px;
+  width: 100%;
+  z-index:  -1;
+  background: rgba(187, 193, 179, 1);
+}
+
+#main_container {
+/*  border: 2px solid black;*/
+  position: relative;
+  height: 840px;
+  width: 960px;
+  margin: 0 auto;
+  top: 0px;
+  left: -20px;
+}
+
+
+@media all and (max-width: 1380px) {
+    #right_container { display: none; };
+}
+
+#right_container{
+/*  border: 2px solid green;*/
+  position: fixed;
+  top: 20px;
+  right: 36px;
+  width: 200px;
+  height: 700px;
+  margin: 0 auto;
+/*  display:none;*/
+}
+
+#left_container{
+/*  border: 2px solid purple;*/
+  cursor: pointer;
+  left: 10px;
+  width: 180px;
+  position: absolute;
+  top: 150px;
+  height: 900px;
+  margin: 0 auto;
+/*  display:none;*/
+}
+
+
+.left_navigation img:hover{
+    opacity:0.4;
+}
+
+.header a:link, a:visited, a:active {
+  color: rgba(134 ,77 , 96, 1  );
+  text-decoration: none;
+}
+
+
+.left_navigation li{
+  height: 120px;
+  width: 100px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  right: 16px;
+  top: -6px;
+  display: block;
+  text-decoration: none;
+/*  background-color: rgba(1,1,1,.1);
+  border: 1px solid black;*/
+
+}
+
+#place_holder_leftside {
+/*  border: 2px solid purple;*/
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  width: 180px;
+  height: 1600px;
+  margin: 0 auto;
+  display: none;
+}
+
+#sign_in{
+  /*display:none;*/
+}
+
+#sign_out{
+  display:none;
+}
+
+#header {
+/*  border: 2px solid red;*/
+  position: relative;
+  width: 950px;
+  height: 180px;
+  margin: 0 auto;
+  top: 0px;
+}
+
+#top_header {
+/*  border: 2px solid gray;*/
+  position: absolute;
+  width: 940px;
+  height: 100px;
+  margin: 0 auto;
+  top: 0px;
+  text-align: right;
+}
+
+.interests_nav_splash, .interests_nav_main{
+  display: block;
+}
+
+.interests_nav_main li:hover{
+    opacity:0.4;
+    cursor: pointer;
+}
+
+.interests_nav_main{
+}
+
+.activities_main{
+  color: rgba( 146,  166, 84 , 1);
+}
+.fam_kids_main{
+  color: rgba( 70 ,207 ,167 , 1);
+}
+.dating_main{
+  color: rgba( 108 , 71 , 81   , 1);
+}
+.friends_main{
+  color: rgba( 225,  140, 116 , 1);
+}
+.community_main{
+  color: rgba( 97 ,163, 155, 1 );
+
+}
+.flings_main{
+  color: rgba(140, 137, 124 , 1 );
+}
+
+.interests_nav_splash li, .interests_nav_main li{
+  display:inline-block;
+  margin-right: 64px;
+  left: 62px;
+
+}
+
+#header_color{
+  position: absolute;
+  top: 0px;
+
+}
+
+#sub_header_main, #sub_header {
+/*  border: 2px solid yellow;*/
+  position:relative;
+  display: block;
+  width: 940px;
+  height: 40px;
+  margin: 0 auto;
+  top: 64px;
+/*  display:none;*/
+/*  background-color: black;*/
+}
+
+
+#sub_header_main {
+/*  border: 2px solid yellow;*/
+top: 26px;
+}
+
+#local_users {
+/*  border: 2px solid teal;*/
+  position:relative;
+/*  display: inline-block;*/
+  width: 750px;
+  top: 0px;
+  left: 0px;
+  height: 660px;
+  margin: 0 auto;
+  overflow: scroll;
+  display:none;
+}
+
+#main_profile{
+/*  border: 2px solid teal;*/
+  position:relative;
+/*  display: inline-block;*/
+  width: 750px;
+  top: 0px;
+  left: 0px;
+  height: 660px;
+  margin: 0 auto;
+  overflow: scroll;
+/*  display:none;*/
+}
+
+#selectable_items {
+/*  border: 1px solid red;*/
+  width: 184px;
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  height: 600px;
+  vertical-align: top;
+  background-color: rgba(235 , 107 ,129 , .04);
+  border-radius: 8px;
+}
+
+.selectables{
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  left: 0px;
+  top: 4px;
+}
+
+.written{
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  left: -6px;
+  top: -6px;
+}
+
+.my_profile_picture{
+  position: relative;
+  display: inline-block;
+  top: -50px;
+  left: 12px;
+  width:31%;
+  height:31%;
+  margin-right: 8px;
+}
+
+
+#written_items {
+/*  border: 1px solid green;*/
+  width: 540px;
+  height: 600px;
+  position:relative;
+  display: inline-block;
+  top: 10px;
+  vertical-align: top;
+  margin-right: 6px;
+  background-color: rgba(120 , 62 , 248 , .03);
+  border-radius: 8px;
+}
+
+#headline_profile{
+  width: 736px;
+  height: 280px;
+  position: relative;
+  display: block;
+  top: 0px;
+  left: 0px;
+/*  border: 1px solid black;*/
+  margin-bottom: 0px;
+  background-color: rgba(168,  136, 83   , .06);
+  border-radius: 8px;
+}
+
+
+.local_user {
+/*  border: 2px solid yellow;*/
+  position:relative;
+  display: inline-block;
+  width: 240px;
+  height: 320px;
+  margin: 0 auto;
+  left: 0px;
+  top: 0px;
+}
+
+#tester{
+  margin: 0 auto;
+  padding: 0;
+}
+
+#signup_form{
+/*  border: 1px solid teal;*/
+  position:relative;
+  display: inline-block;
+  width: 940px;
+  top: 0px;
+  left: 0px;
+  height: 520px;
+  margin: 0 auto;
+  text-align: center;
+/*  display:none;*/
+}
+
+.tiny_online{
+  position: absolute;
+  top:78px;
+  left:30px;
+  width: 42%;
+}
+
+.my_matches_adjustment{
+  width: 95%;
+  margin-top: 22px;
+  margin-left: 12px;
+}
+
+.user_sign_up{
+top:120px;
+right:100px;
+position: relative;
+text-align: right;
+}
+
+#main_view {
+/*  border: 2px solid yellow;*/
+  position:relative;
+  display: inline-block;
+  width: 750px;
+  top:-12px;
+  left: 190px;
+  height: 640px;
+  margin: 0 auto;
+/*  display:none;*/
+  overflow: scroll;
+}
+
+#main_splash_view{
+/*  border: 2px solid green;*/
+  position:relative;
+/*  display: inline-block;*/
+  width: 950px;
+  top:0px;
+  left: 0px;
+  height: 640px;
+  margin: 0 auto;
+/*  display:none;*/
+
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+li {
+    position: relative;
+    margin-left: -20px;
+    margin-bottom: 30px;
+}
+
+
+
+/*
+
+.category_container{
+  border: 2px solid yellow;
+  position:relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  left: 14px;
+}*/
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+ */
+
+
+html {
+  font-family: 'gotham_sansrounded';
+}
