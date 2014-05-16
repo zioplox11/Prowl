@@ -28,7 +28,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string      :pets
       t.text         :self_summary
       t.string      :looking_for
-      t.text         :profile_image_url
+      t.text         :profile_image_url, default: "http://i.imgur.com/vTeB8gz.png"
       t.timestamps
     end
   end
