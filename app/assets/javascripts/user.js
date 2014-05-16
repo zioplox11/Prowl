@@ -1,4 +1,4 @@
-var User, user, currentUser;
+// var User, user, currentUser;
 
 $(function(){
 

@@ -1,8 +1,9 @@
-var ProfileView, profileView;
+// var ProfileView, profileView;
 
 $(function(){
 
   ProfileView = Backbone.View.extend({
+    // model :User,
 
     el: $('#main_profile'),
 

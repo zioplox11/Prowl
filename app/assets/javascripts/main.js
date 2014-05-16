@@ -1,11 +1,11 @@
 
 
-$(function(){
+// $(function(){
 
-var app = {
-  init: function(){
-    Backbone.history.start();
-  }
-}
+// var app = {
+//   init: function(){
+//     Backbone.history.start();
+//   }
+// }
 
-});
+// });
