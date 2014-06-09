@@ -28,6 +28,8 @@ $(function(){
 
     viewAnotherTemplate: _.template($("#view_another_profile").html()),
 
+    viewLocalProfiles: _.template($("#view__local_profiles").html()),
+
     renderEditView: function(){
       this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
       this.$el.empty();
@@ -46,6 +48,12 @@ $(function(){
       this.$el.append(this.$viewEl);
     },
 
+    renderMiniProfileView: function(){
+      this.$viewEl = $("<div>").html(this.viewLocalProfiles(this.model.toJSON()));
+      this.$el.empty();
+      this.$el.append(this.$viewEl);
+    },
+
     changed: function(event){
       var changed = event.currentTarget;
       var value = $(event.currentTarget).val();
@@ -58,6 +66,12 @@ $(function(){
       });
     }
 
+  });
+
+
+ MiniProfileList = Backbone.Collection.extend({
+    url: '/users',
+    model: ProfileView
   });
 
 

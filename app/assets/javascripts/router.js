@@ -5,7 +5,7 @@ $(function(){
 
 var Message, MessagesView, MessageList, inbox, inboxView;
 var User, user, currentUser;
-var ProfileView, profileView;
+var ProfileView, profileView, MiniProfileList, miniProfileList;
 var router;
 
 var AppRouter = Backbone.Router.extend({
@@ -14,6 +14,7 @@ var AppRouter = Backbone.Router.extend({
     router = this;
     inbox = new MessageList();
     inboxView = new MessagesView({collection: inbox});
+    miniProfileList = new MiniProfileList({collection: miniProfiles})
   },
 
   routes: {
