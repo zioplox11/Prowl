@@ -89,7 +89,7 @@ ul.mini-profile-description{
   letter-spacing: .04em;
 }
 
-.change_profile_button {
+.change_profile_button, .return_to_mini_profiles {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -103,6 +103,10 @@ ul.mini-profile-description{
   border-radius: 24px;
   color: rgba(187, 193, 179, 1);
   letter-spacing: .12em;
+}
+
+.return_to_mini_profiles{
+  font-size: 10px;
 }
 
 h6{

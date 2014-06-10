@@ -53,12 +53,15 @@ $(function(){
 
 
   var User = Backbone.Model.extend({
+    urlRoot: '/users'
   })
 
  MiniProfileList = Backbone.Collection.extend({
     url: '/users/localprofiles',
     model: User
   });
+
+ var miniProfileObj;
 
 
 MiniProfilesView = Backbone.View.extend({
@@ -70,8 +73,14 @@ MiniProfilesView = Backbone.View.extend({
         this.collection.fetch();
     },
 
+    events: {
+      "click .mini-profile-container" : "renderFullProfile",
+      "click .return_to_mini_profiles" : "renderProfilesView"
+    },
 
     viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
+
+    viewAnotherProfile: _.template($("#view_another_profile").html()),
 
     renderProfilesView: function(){
       this.$el.empty();
@@ -83,7 +92,7 @@ MiniProfilesView = Backbone.View.extend({
 
     renderPerson: function(miniProfile){
 
-        var miniProfileObj = {
+        miniProfileObj = {
           user_id: miniProfile.get('id'),
           username: miniProfile.get('username'),
           profile_image_url: miniProfile.get('profile_image_url'),
@@ -93,43 +102,24 @@ MiniProfilesView = Backbone.View.extend({
           created_at: miniProfile.get('created_at')
         }
         this.$el.append(this.viewLocalProfiles(miniProfileObj));
+    },
+
+    renderFullProfile: function(e) {
+      var that = this;
+      var thisid = arguments[0].currentTarget.id;
+      var thisProfile = new User({id: thisid});
+      debugger;
+      thisProfile.fetch().complete(function(){
+        that.$viewEl = $("<div>").html(that.viewAnotherProfile(thisProfile.toJSON()));
+        that.$el.empty();
+        that.$el.append(that.$viewEl);
+      });
     }
+
+
 });
 
-var id = 17;
-  var OtherUser = Backbone.Model.extend({
-    url: '/users/' + id
-  })
 
-  otherUser = new OtherUser({});
-  otherUser.fetch().complete(function(){
-      anotherProfileView = new AnotherProfileView({model: otherUser});
-    });
-
-
-  var AnotherProfileView = Backbone.View.extend({
-    model :otherUser,
-
-    el: $('#main_profile'),
-
-    initialize: function(){
-        this.renderAnotherProfileView();
-    },
-
-    events: {
-      "click .mini_profiles" : "viewMiniProfiles",
-    },
-
-    viewAnotherProfile: _.template($("#view_another_profile").html()),
-
-    renderAnotherProfileView: function(){
-      this.$viewEl = $("<div>").html(this.viewAnotherProfile(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$viewEl);
-    },
-
-
-  });
 
 
 
