@@ -10760,14 +10760,16 @@ return jQuery;
     <li class="messages_time"><%= created_at %></li>\
   </ul>';
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<img class="mini_profile_photo" src=<%= profile_image_url %> alt="No Image Available">\
+(function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<div class="mini-profile-container">\
+  <img class="mini_profile_photo" src=<%= profile_image_url %> alt="No Image Available">\
   <ul class="mini_profile"> \
     <li class="mini_profile_user_name">User Name: <%= username %></li>\
     <li class="mini_profile_borough">Borough: <%= borough %></li>\
     <li class="mini_profile_age">Age: <%= age %></li>\
     <li class="mini_profile_looking_for">Looking for: <%= looking_for %></li>\
     <li class="mini_member_since">Prowl member since: <%= created_at %></li>\
-  </ul>';
+  </ul>\
+  </div>';
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["templates/profile_view"] = '';
 }).call(this);
@@ -10917,7 +10919,7 @@ $(function(){
 
 MiniProfilesView = Backbone.View.extend({
 
-    el: $('#main_profile'),
+    el: $('#mini_profile'),
 
     initialize: function(){
         this.renderProfilesView();
@@ -10963,6 +10965,8 @@ var User, user, currentUser;
 var ProfileView, profileView, MiniProfileList, miniProfileList, miniProfile, miniProfiles, miniProfilesView;
 var router;
 
+
+
 var AppRouter = Backbone.Router.extend({
 
   initialize: function(){
@@ -10997,6 +11001,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyMessages: function(id) {
+    router = this;
+    $('#main_view').empty;
     inbox.fetch().complete(function(){
       inboxView.render();
       router.showNewView(inboxView);
@@ -11004,9 +11010,10 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyProfile: function(id) {
-    var router = this;
+    router = this;
+    $('#main_view').empty;
     currentUser.fetch().complete(function(){
-      router.showNewView(profileView)
+      router.showNewView(profileView);
     });
   },
 
@@ -11023,6 +11030,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   localProfiles: function(lat, long) {
+    router = this;
+    $('#main_view').empty;
     miniProfileList.fetch().complete(function(){
       miniProfilesView.renderProfilesView();
       router.showNewView(miniProfilesView);
