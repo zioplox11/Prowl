@@ -525,7 +525,7 @@ top: 26px;
   border-radius: 8px;
 }
 
-#headline_profile{
+#headline_profile, #other_headline_profile{
   width: 736px;
   height: 280px;
   position: relative;
@@ -536,6 +536,10 @@ top: 26px;
   margin-bottom: 0px;
   background-color: rgba(168,  136, 83   , .06);
   border-radius: 8px;
+}
+
+#other_headline_profile{
+  background-color: rgba(131,  218 ,211   , .06);
 }
 
 
