@@ -302,6 +302,19 @@ h3{
   text-decoration: none;
 }
 
+.mini-profile-container a:link, a:visited, a:active {
+  color: rgba(0 ,0 , 0, 1  );
+  text-decoration: none;
+}
+
+.mini-profile-container img:hover{
+    opacity:0.8;
+}
+
+.mini-profile-container a:hover{
+    opacity:0.4;
+}
+
 
 .left_navigation li{
   height: 120px;

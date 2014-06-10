@@ -1,9 +1,9 @@
 '<div class="mini-profile-container">\
 <div class="mini-profile-photo">\
-<img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available">\
+<a href=users/<%= user_id %>><img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available"></a>\
 </div>\
 <ul class="mini-profile-description"> \
-  <li class="mini-profile-user-name">User Name: <%= username %></li>\
+  <li class="mini-profile-user-name">User Name: <a href=users/<%= user_id %>><%= username %></a></li>\
   <li class="mini-profile-borough">Borough: <%= borough %></li>\
   <li class="mini-profile-age">Age: <%= age %></li>\
   <li class="mini-profile-looking-for">Looking for: <%= looking_for %></li>\

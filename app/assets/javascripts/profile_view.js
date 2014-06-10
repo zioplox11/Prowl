@@ -16,17 +16,14 @@ $(function(){
 
     events: {
       "click .update_profile" : "updateProfile",
-      // "click .switch_profile" : "updateProfile",
       "click .change_profile_button" : "renderEditView",
       "change input"          : "changed",
-      "change select"           : "changed"
+      "change select"           : "changed",
     },
 
     editTemplate: _.template($("#edit_own_profile").html()),
 
     viewOwnTemplate: _.template($("#view_own_profile").html()),
-
-    viewAnotherTemplate: _.template($("#view_another_profile").html()),
 
     renderEditView: function(){
       this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
@@ -36,12 +33,6 @@ $(function(){
 
     renderOwnProfileView: function(){
       this.$viewEl = $("<div>").html(this.viewOwnTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$viewEl);
-    },
-
-    renderOtherProfileView: function(){
-      this.$viewEl = $("<div>").html(this.viewAnotherTemplate(this.model.toJSON()));
       this.$el.empty();
       this.$el.append(this.$viewEl);
     },
@@ -79,6 +70,7 @@ MiniProfilesView = Backbone.View.extend({
         this.collection.fetch();
     },
 
+
     viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
 
     renderProfilesView: function(){
@@ -92,6 +84,7 @@ MiniProfilesView = Backbone.View.extend({
     renderPerson: function(miniProfile){
 
         var miniProfileObj = {
+          user_id: miniProfile.get('id'),
           username: miniProfile.get('username'),
           profile_image_url: miniProfile.get('profile_image_url'),
           borough: miniProfile.get('borough'),
@@ -102,6 +95,41 @@ MiniProfilesView = Backbone.View.extend({
         this.$el.append(this.viewLocalProfiles(miniProfileObj));
     }
 });
+
+var id = 17;
+  var OtherUser = Backbone.Model.extend({
+    url: '/users/' + id
+  })
+
+  otherUser = new OtherUser({});
+  otherUser.fetch().complete(function(){
+      anotherProfileView = new AnotherProfileView({model: otherUser});
+    });
+
+
+  var AnotherProfileView = Backbone.View.extend({
+    model :otherUser,
+
+    el: $('#main_profile'),
+
+    initialize: function(){
+        this.renderAnotherProfileView();
+    },
+
+    events: {
+      "click .mini_profiles" : "viewMiniProfiles",
+    },
+
+    viewAnotherProfile: _.template($("#view_another_profile").html()),
+
+    renderAnotherProfileView: function(){
+      this.$viewEl = $("<div>").html(this.viewAnotherProfile(this.model.toJSON()));
+      this.$el.empty();
+      this.$el.append(this.$viewEl);
+    },
+
+
+  });
 
 
 

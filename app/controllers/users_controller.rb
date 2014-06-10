@@ -9,7 +9,35 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    render json: @user
+    render json: {
+        age: @user.age,
+        username: @user.username,
+        height: @user.height,
+        sexual_orientation: @user.sexual_orientation,
+        body_type: @user.body_type,
+        birthdate: @user.birthdate,
+        gender: @user.gender,
+        borough: @user.borough,
+        neighborhood: @user.neighborhood,
+        ethnicity: @user.ethnicity,
+        diet: @user.diet,
+        drugs: @user.drugs,
+        drinks: @user.drinks,
+        smokes: @user.smokes,
+        zodiac_sign: @user.zodiac_sign,
+        education: @user.education,
+        job: @user.job,
+        income: @user.income,
+        relationship_status: @user.relationship_status,
+        relationship_type: @user.relationship_type,
+        children_family: @user.children_family,
+        languages: @user.languages,
+        pets: @user.pets,
+        profile_image_url: @user.profile_image_url,
+        self_summary: @user.self_summary,
+        looking_for: @user.looking_for,
+        created_at: @user.created_at,
+    }
   end
 
   # POST /users

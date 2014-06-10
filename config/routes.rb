@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   get '/users/localprofiles' => 'users#local_profiles'
 
-
   resources :users,     only: [:create, :destroy, :show, :update, :index]
   resources :interests, only: [:create, :destroy, :show, :update]
   resources :posts,     only: [:create, :destroy, :show, :index]

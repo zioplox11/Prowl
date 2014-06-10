@@ -13,7 +13,9 @@
 
 
     <div id="headline_profile">
+
       <button class="change_profile_button">Edit My Profile</button>
+
 
       <h6 class="profile_username">Username: <%%= username %></h6>
       <br>
@@ -196,9 +198,51 @@
 
 
 <script id="view_another_profile" type="text/template">
-  <div>Username: <%%= username %></div>
-  <div>Email: <%%= email %></div>
-  <div>Diet: <%%= diet %></div>
+    <div id="headline_profile">
+      <button class="mini_profiles">View All Local Profiles</button>
+
+      <h6 class="profile_username">Username: <%%= username %></h6>
+      <br>
+
+      <p><img class="my_profile_picture" src='<%%= profile_image_url %>' alt="No Image Available">
+      <img class="my_profile_picture" src="assets/User_Picture_Placeholder.png" alt="No Image Available">
+      <img class="my_profile_picture" src="assets/User_Picture_Placeholder.png" alt="No Image Available"></p>
+
+      <p class="member_since">Prowl member since: <%= current_user.created_at.getutc.strftime("%b %-d, %Y") %></p>
+    </div>
+
+    <div id="written_items">
+      <ul class="written">
+        <li>Borough: <%%= borough %></li>
+        <li>Self Summary: <%%= self_summary %></li>
+        <li>Sexual Orientation: <%%= sexual_orientation %></li>
+        <li>Ethnicity: <%%= ethnicity %></li>
+        <li>Gender: <%%= gender %></li>
+        <li>Relationship status: <%%= relationship_status %></li>
+        <li>Relationship interests: <%%= relationship_type  %></li>
+        <li>My family history interests (past, current, and future): <%%= children_family  %></li>
+      </ul>
+    </div>
+
+    <div id="selectable_items">
+      <ul class="selectables">
+
+        <li class="selected_interests_list">Age: <%%= age %></li>
+        <li class="selected_interests_list">Looking For: <%%= looking_for %></li>
+        <li class="selected_interests_list">Height: <%%= height %></li>
+        <li class="selected_interests_list">Neighborhood: <%%= neighborhood %></li>
+        <li class="selected_interests_list">Body Type: <%%= body_type %></li>
+        <li class="selected_interests_list">Diet: <%%= diet %></li>
+        <li class="selected_interests_list">Education: <%%= education %></li>
+        <li class="selected_interests_list">Zodiac Sign: <%%= zodiac_sign %></li>
+        <li class="selected_interests_list">Languages: <%%= languages %></li>
+        <li class="selected_interests_list">Job: <%%= job %></li>
+        <li class="selected_interests_list">Income: <%%= income %></li>
+        <li class="selected_interests_list">Smokes: <%%= smokes %></li>
+        <li class="selected_interests_list">Drinks: <%%= smokes %></li>
+        <li class="selected_interests_list">Drugs: <%%= smokes %></li>
+      </ul>
+    </div>
 </script>
 
 
