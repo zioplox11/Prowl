@@ -10760,12 +10760,12 @@ return jQuery;
     <li class="messages_time"><%= created_at %></li>\
   </ul>';
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<div class="mini-profile-container">\
+(function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<div class="mini-profile-container" id="<%= user_id %>">\
   <div class="mini-profile-photo">\
-  <img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available">\
+  <a href=users/<%= user_id %>><img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available"></a>\
   </div>\
   <ul class="mini-profile-description"> \
-    <li class="mini-profile-user-name">User Name: <%= username %></li>\
+    <li class="mini-profile-user-name">User Name: <a href=users/<%= user_id %>><%= username %></a></li>\
     <li class="mini-profile-borough">Borough: <%= borough %></li>\
     <li class="mini-profile-age">Age: <%= age %></li>\
     <li class="mini-profile-looking-for">Looking for: <%= looking_for %></li>\
@@ -10865,17 +10865,14 @@ $(function(){
 
     events: {
       "click .update_profile" : "updateProfile",
-      // "click .switch_profile" : "updateProfile",
       "click .change_profile_button" : "renderEditView",
       "change input"          : "changed",
-      "change select"           : "changed"
+      "change select"           : "changed",
     },
 
     editTemplate: _.template($("#edit_own_profile").html()),
 
     viewOwnTemplate: _.template($("#view_own_profile").html()),
-
-    viewAnotherTemplate: _.template($("#view_another_profile").html()),
 
     renderEditView: function(){
       this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
@@ -10885,12 +10882,6 @@ $(function(){
 
     renderOwnProfileView: function(){
       this.$viewEl = $("<div>").html(this.viewOwnTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$viewEl);
-    },
-
-    renderOtherProfileView: function(){
-      this.$viewEl = $("<div>").html(this.viewAnotherTemplate(this.model.toJSON()));
       this.$el.empty();
       this.$el.append(this.$viewEl);
     },
@@ -10911,12 +10902,15 @@ $(function(){
 
 
   var User = Backbone.Model.extend({
+    urlRoot: '/users'
   })
 
  MiniProfileList = Backbone.Collection.extend({
     url: '/users/localprofiles',
     model: User
   });
+
+ var miniProfileObj;
 
 
 MiniProfilesView = Backbone.View.extend({
@@ -10928,7 +10922,14 @@ MiniProfilesView = Backbone.View.extend({
         this.collection.fetch();
     },
 
+    events: {
+      "click .mini-profile-container" : "renderFullProfile",
+      "click .return_to_mini_profiles" : "renderProfilesView"
+    },
+
     viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
+
+    viewAnotherProfile: _.template($("#view_another_profile").html()),
 
     renderProfilesView: function(){
       this.$el.empty();
@@ -10940,7 +10941,8 @@ MiniProfilesView = Backbone.View.extend({
 
     renderPerson: function(miniProfile){
 
-        var miniProfileObj = {
+        miniProfileObj = {
+          user_id: miniProfile.get('id'),
           username: miniProfile.get('username'),
           profile_image_url: miniProfile.get('profile_image_url'),
           borough: miniProfile.get('borough'),
@@ -10949,8 +10951,24 @@ MiniProfilesView = Backbone.View.extend({
           created_at: miniProfile.get('created_at')
         }
         this.$el.append(this.viewLocalProfiles(miniProfileObj));
+    },
+
+    renderFullProfile: function(e) {
+      var that = this;
+      var thisid = arguments[0].currentTarget.id;
+      var thisProfile = new User({id: thisid});
+      debugger;
+      thisProfile.fetch().complete(function(){
+        that.$viewEl = $("<div>").html(that.viewAnotherProfile(thisProfile.toJSON()));
+        that.$el.empty();
+        that.$el.append(that.$viewEl);
+      });
     }
+
+
 });
+
+
 
 
 
