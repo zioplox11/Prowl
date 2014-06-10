@@ -10760,7 +10760,14 @@ return jQuery;
     <li class="messages_time"><%= created_at %></li>\
   </ul>';
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["templates/mini_view"] = '';
+(function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<img class="mini_profile_photo" src=<%= profile_image_url %> alt="No Image Available">\
+  <ul class="mini_profile"> \
+    <li class="mini_profile_user_name">User Name: <%= username %></li>\
+    <li class="mini_profile_borough">Borough: <%= borough %></li>\
+    <li class="mini_profile_age">Age: <%= age %></li>\
+    <li class="mini_profile_looking_for">Looking for: <%= looking_for %></li>\
+    <li class="mini_member_since">Prowl member since: <%= created_at %></li>\
+  </ul>';
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["templates/profile_view"] = '';
 }).call(this);
@@ -10789,8 +10796,11 @@ $(function(){
 
   MessagesView = Backbone.View.extend({
     el: $('#main_inbox'),
+
     className: 'inbox',
+
     template: _.template(JST['templates/message_view']),
+
     render: function(){
       this.$el.empty();
       this.collection.each(function(message,idx){
@@ -10896,6 +10906,49 @@ $(function(){
   });
 
 
+  var User = Backbone.Model.extend({
+  })
+
+ MiniProfileList = Backbone.Collection.extend({
+    url: '/users/localprofiles',
+    model: User
+  });
+
+
+MiniProfilesView = Backbone.View.extend({
+
+    el: $('#main_profile'),
+
+    initialize: function(){
+        this.renderProfilesView();
+        this.collection.fetch();
+    },
+
+    viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
+
+    renderProfilesView: function(){
+      this.$el.empty();
+      var that = this;
+      this.collection.each(function(miniProfile,idx){
+        var miniProfile = that.renderPerson(miniProfile);
+      }.bind(this));
+    },
+
+    renderPerson: function(miniProfile){
+
+        var miniProfileObj = {
+          username: miniProfile.get('username'),
+          profile_image_url: miniProfile.get('profile_image_url'),
+          borough: miniProfile.get('borough'),
+          age: miniProfile.get('age'),
+          looking_for: miniProfile.get('looking_for'),
+          created_at: miniProfile.get('created_at')
+        }
+        this.$el.append(this.viewLocalProfiles(miniProfileObj));
+    }
+});
+
+
 
 });
 
@@ -10907,7 +10960,7 @@ $(function(){
 
 var Message, MessagesView, MessageList, inbox, inboxView;
 var User, user, currentUser;
-var ProfileView, profileView;
+var ProfileView, profileView, MiniProfileList, miniProfileList, miniProfile, miniProfiles, miniProfilesView;
 var router;
 
 var AppRouter = Backbone.Router.extend({
@@ -10916,13 +10969,15 @@ var AppRouter = Backbone.Router.extend({
     router = this;
     inbox = new MessageList();
     inboxView = new MessagesView({collection: inbox});
+    miniProfileList = new MiniProfileList();
+    miniProfilesView = new MiniProfilesView({collection: miniProfileList});
   },
 
   routes: {
     "viewMyProfile"              : "viewMyProfile",
     "viewMyMatches"              : "viewMyMatches",
     "viewMyMessages"             : "viewMyMessages",
-    "localProfiles/:lat/:long"   : "localProfiles",
+    "localProfiles"   : "localProfiles",
     "familyKidsForum/:borough"   : "familyKidsForum",
     "communityBulletin/:borough" : "communityBulletin"
     // "community_bulletin/:borough"    :       "communityBulletin",
@@ -10968,7 +11023,10 @@ var AppRouter = Backbone.Router.extend({
   },
 
   localProfiles: function(lat, long) {
-
+    miniProfileList.fetch().complete(function(){
+      miniProfilesView.renderProfilesView();
+      router.showNewView(miniProfilesView);
+    });
   },
 
   profileSearch: function(username) {
