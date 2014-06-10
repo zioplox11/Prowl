@@ -61,10 +61,14 @@ $(function(){
   });
 
 
+  var User = Backbone.Model.extend({
+  })
+
  MiniProfileList = Backbone.Collection.extend({
-    url: '/localprofiles',
+    url: '/users/localprofiles',
     model: User
   });
+
 
 MiniProfilesView = Backbone.View.extend({
 
@@ -72,20 +76,20 @@ MiniProfilesView = Backbone.View.extend({
 
     initialize: function(){
         this.renderProfilesView();
+        this.collection.fetch();
     },
 
     viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
 
     renderProfilesView: function(){
       this.$el.empty();
-              debugger;
+      var that = this;
       this.collection.each(function(miniProfile,idx){
-        var miniProfile = this.fetchData(miniProfile);
+        var miniProfile = that.renderPerson(miniProfile);
       }.bind(this));
     },
 
-    fetchData: function(){
-      miniProfile.fetch().complete(function(){
+    renderPerson: function(miniProfile){
 
         var miniProfileObj = {
           username: miniProfile.get('username'),
@@ -95,12 +99,8 @@ MiniProfilesView = Backbone.View.extend({
           looking_for: miniProfile.get('looking_for'),
           created_at: miniProfile.get('created_at')
         }
-
-        this.view.$el.append(view.viewLocalProfiles(miniProfileObj));
-
-    });
+        this.$el.append(this.viewLocalProfiles(miniProfileObj));
     }
-
 });
 
 

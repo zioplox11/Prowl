@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   get '/messages/:id' => 'messages#conversation'
   resources :messages, only: [:create, :destroy, :index]
 
-  resources :users,     only: [:create, :destroy, :show, :update, :index, :local_profiles]
+
+  get '/users/localprofiles' => 'users#local_profiles'
+
+
+  resources :users,     only: [:create, :destroy, :show, :update, :index]
   resources :interests, only: [:create, :destroy, :show, :update]
   resources :posts,     only: [:create, :destroy, :show, :index]
   resources :photos,    only: [:create, :destroy, :show, :index]
 
-
-  get '/localprofiles' => 'users#local_profiles'
 
 end
