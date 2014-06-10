@@ -4,49 +4,73 @@
   font-weight: normal;
   font-style: normal;
 }
-html {
+html, body {
 /*  background: url(splash_page_view.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;*/
-  background-color: rgba(247,  243, 229  , 1)
+  background-color: rgba(247,  243, 229  , 1);
+  font-size: 16px;
 }
 
 .mini-profile-container{
   position: relative;
   display: inline-block;
-  width: 33.3%;
-  height: 100px;
+  width: 33.33%;
+  vertical-align: top;
+  margin: 0 0;
+  padding: 0 0;
 }
 
-.mini_profile_photo{
+.mini-profile-photo{
   width: 90%;
   vertical-align: top;
 }
 
-.mini_profile_user_name{
+.mini-photo{
+  width: 228px;
+  height: 180px;
+}
+
+.mini-profile-description li{
+  width: 90%;
+  text-decoration: none;
+  font-size: .8em;
+  list-style-type: none;
+    margin-bottom: 0;
+}
+
+ul.mini-profile-description{
+}
+
+.mini-profile-username{
 
 }
 
-.mini_profile_age{
+.mini-profile-age{
 
 }
 
-.mini_profile_borough{
+.mini-profile-borough{
 
 }
 
-.mini_profile_looking_for{
+.mini-profile-looking-for{
 
 }
 
-.mini_profile{
+.mini-member-since{
 
 }
 
-.mini_member_since{
-
+#mini_profile{
+  position:relative;
+  width: 750px;
+  top: 0px;
+  left: 0px;
+  height: 1020px;
+  margin: 0 auto;
 }
 
 .selected_interests_list{
@@ -239,7 +263,7 @@ h3{
 #main_container {
 /*  border: 2px solid black;*/
   position: relative;
-  height: 840px;
+  height: 1240px;
   width: 960px;
   margin: 0 auto;
   top: 0px;
@@ -421,7 +445,7 @@ top: 26px;
   width: 750px;
   top: 0px;
   left: 0px;
-  height: 660px;
+  height: 1060px;
   margin: 0 auto;
   overflow: scroll;
 /*  display:none;*/
@@ -554,7 +578,7 @@ text-align: right;
   width: 750px;
   top:-12px;
   left: 190px;
-  height: 640px;
+  height: 1020px;
   margin: 0 auto;
 /*  display:none;*/
   overflow: scroll;

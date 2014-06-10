@@ -1,11 +1,13 @@
 '<div class="mini-profile-container">\
-<img class="mini_profile_photo" src=<%= profile_image_url %> alt="No Image Available">\
-<ul class="mini_profile"> \
-  <li class="mini_profile_user_name">User Name: <%= username %></li>\
-  <li class="mini_profile_borough">Borough: <%= borough %></li>\
-  <li class="mini_profile_age">Age: <%= age %></li>\
-  <li class="mini_profile_looking_for">Looking for: <%= looking_for %></li>\
-  <li class="mini_member_since">Prowl member since: <%= created_at %></li>\
+<div class="mini-profile-photo">\
+<img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available">\
+</div>\
+<ul class="mini-profile-description"> \
+  <li class="mini-profile-user-name">User Name: <%= username %></li>\
+  <li class="mini-profile-borough">Borough: <%= borough %></li>\
+  <li class="mini-profile-age">Age: <%= age %></li>\
+  <li class="mini-profile-looking-for">Looking for: <%= looking_for %></li>\
+  <li class="mini-member-since">Prowl member since: <%= created_at %></li>\
 </ul>\
 </div>'
 
