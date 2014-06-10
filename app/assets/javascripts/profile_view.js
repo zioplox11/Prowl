@@ -28,8 +28,6 @@ $(function(){
 
     viewAnotherTemplate: _.template($("#view_another_profile").html()),
 
-    viewLocalProfiles: _.template($("#view__local_profiles").html()),
-
     renderEditView: function(){
       this.$formEl = $("<div>").html(this.editTemplate(this.model.toJSON()));
       this.$el.empty();
@@ -44,12 +42,6 @@ $(function(){
 
     renderOtherProfileView: function(){
       this.$viewEl = $("<div>").html(this.viewAnotherTemplate(this.model.toJSON()));
-      this.$el.empty();
-      this.$el.append(this.$viewEl);
-    },
-
-    renderMiniProfileView: function(){
-      this.$viewEl = $("<div>").html(this.viewLocalProfiles(this.model.toJSON()));
       this.$el.empty();
       this.$el.append(this.$viewEl);
     },
@@ -70,9 +62,44 @@ $(function(){
 
 
  MiniProfileList = Backbone.Collection.extend({
-    url: '/users',
-    model: ProfileView
+    url: '/localprofiles'
   });
+
+MiniProfilesView = Backbone.View.extend({
+
+    el: $('#main_profile'),
+
+    initialize: function(){
+        this.renderProfilesView();
+    },
+
+    viewLocalProfiles: _.template(JST['templates/message_view']),
+
+    renderProfilesView: function(){
+      this.$el.empty();
+      this.collection.each(function(miniProfile,idx){
+        var miniProfile = this.fetchData(miniProfile);
+      }.bind(this));
+    },
+
+    fetchData: function(){
+      miniProfile.fetch().complete(function(){
+
+        var miniProfileObj = {
+          username: miniProfile.get('username'),
+          profile_image_url: miniProfile.get('profile_image_url'),
+          borough: miniProfile.get('borough'),
+          age: miniProfile.get('age'),
+          looking_for: miniProfile.get('looking_for'),
+          created_at: miniProfile.get('created_at')
+        }
+
+        this.view.$el.append(view.viewLocalProfiles(miniProfileObj));
+
+    });
+    }
+
+});
 
 
 

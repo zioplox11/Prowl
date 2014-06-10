@@ -43,6 +43,14 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def local_profiles
+    @local_users = User.where(borough: current_user.borough).where.not(id: current_user.id)
+    @local_users = @local_users[0..8]
+    render json: @local_users
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

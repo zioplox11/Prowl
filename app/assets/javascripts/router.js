@@ -5,7 +5,7 @@ $(function(){
 
 var Message, MessagesView, MessageList, inbox, inboxView;
 var User, user, currentUser;
-var ProfileView, profileView, MiniProfileList, miniProfileList;
+var ProfileView, profileView, MiniProfileList, miniProfileList, miniProfile, miniProfiles, miniProfilesView;
 var router;
 
 var AppRouter = Backbone.Router.extend({
@@ -13,8 +13,10 @@ var AppRouter = Backbone.Router.extend({
   initialize: function(){
     router = this;
     inbox = new MessageList();
+    miniProfile = new User();
     inboxView = new MessagesView({collection: inbox});
-    miniProfileList = new MiniProfileList({collection: miniProfiles})
+    miniProfileList = new MiniProfileList({model: miniProfile});
+    miniProfilesView = new MiniProfilesView({collection: miniProfileList});
   },
 
   routes: {
@@ -59,7 +61,10 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyMatches: function(id) {
-
+    miniProfileList.fetch().complete(function(){
+      miniProfilesView.render();
+      router.showNewView(miniProfilesView);
+    });
   },
 
   familyKidsForum: function(borough) {

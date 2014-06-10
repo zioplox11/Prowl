@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :posts,     only: [:create, :destroy, :show, :index]
   resources :photos,    only: [:create, :destroy, :show, :index]
 
+
+  get '/localprofiles' => 'users#local_profiles'
+
 end
