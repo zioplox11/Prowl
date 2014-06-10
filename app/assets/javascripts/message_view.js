@@ -12,8 +12,11 @@ $(function(){
 
   MessagesView = Backbone.View.extend({
     el: $('#main_inbox'),
+
     className: 'inbox',
+
     template: _.template(JST['templates/message_view']),
+
     render: function(){
       this.$el.empty();
       this.collection.each(function(message,idx){

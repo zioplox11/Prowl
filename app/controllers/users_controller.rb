@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy, :local_profiles]
 
   # GET /users
   def index
@@ -44,7 +44,9 @@ class UsersController < ApplicationController
   end
 
 
+  # GET /localprofiles
   def local_profiles
+    binding.pry
     @local_users = User.where(borough: current_user.borough).where.not(id: current_user.id)
     @local_users = @local_users[0..8]
     render json: @local_users

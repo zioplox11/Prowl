@@ -13,9 +13,8 @@ var AppRouter = Backbone.Router.extend({
   initialize: function(){
     router = this;
     inbox = new MessageList();
-    miniProfile = new User();
     inboxView = new MessagesView({collection: inbox});
-    miniProfileList = new MiniProfileList({model: miniProfile});
+    miniProfileList = new MiniProfileList();
     miniProfilesView = new MiniProfilesView({collection: miniProfileList});
   },
 
@@ -23,7 +22,7 @@ var AppRouter = Backbone.Router.extend({
     "viewMyProfile"              : "viewMyProfile",
     "viewMyMatches"              : "viewMyMatches",
     "viewMyMessages"             : "viewMyMessages",
-    "localProfiles/:lat/:long"   : "localProfiles",
+    "localProfiles"   : "localProfiles",
     "familyKidsForum/:borough"   : "familyKidsForum",
     "communityBulletin/:borough" : "communityBulletin"
     // "community_bulletin/:borough"    :       "communityBulletin",
@@ -61,10 +60,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyMatches: function(id) {
-    miniProfileList.fetch().complete(function(){
-      miniProfilesView.render();
-      router.showNewView(miniProfilesView);
-    });
+
   },
 
   familyKidsForum: function(borough) {
@@ -72,7 +68,10 @@ var AppRouter = Backbone.Router.extend({
   },
 
   localProfiles: function(lat, long) {
-
+    miniProfileList.fetch().complete(function(){
+      miniProfilesView.renderProfilesView();
+      router.showNewView(miniProfilesView);
+    });
   },
 
   profileSearch: function(username) {

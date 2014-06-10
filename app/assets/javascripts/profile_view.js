@@ -62,7 +62,8 @@ $(function(){
 
 
  MiniProfileList = Backbone.Collection.extend({
-    url: '/localprofiles'
+    url: '/localprofiles',
+    model: User
   });
 
 MiniProfilesView = Backbone.View.extend({
@@ -73,10 +74,11 @@ MiniProfilesView = Backbone.View.extend({
         this.renderProfilesView();
     },
 
-    viewLocalProfiles: _.template(JST['templates/message_view']),
+    viewLocalProfiles: _.template(JST['templates/mini_profile_view']),
 
     renderProfilesView: function(){
       this.$el.empty();
+              debugger;
       this.collection.each(function(miniProfile,idx){
         var miniProfile = this.fetchData(miniProfile);
       }.bind(this));
