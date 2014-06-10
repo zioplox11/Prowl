@@ -10762,10 +10762,10 @@ return jQuery;
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["templates/mini_profile_view"] = '<div class="mini-profile-container" id="<%= user_id %>">\
   <div class="mini-profile-photo">\
-  <a href=users/<%= user_id %>><img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available"></a>\
+  <a href=#><img class="mini-photo" src=<%= profile_image_url %> alt="No Image Available"></a>\
   </div>\
   <ul class="mini-profile-description"> \
-    <li class="mini-profile-user-name">User Name: <a href=users/<%= user_id %>><%= username %></a></li>\
+    <li class="mini-profile-user-name">User Name: <a href=#><%= username %></a></li>\
     <li class="mini-profile-borough">Borough: <%= borough %></li>\
     <li class="mini-profile-age">Age: <%= age %></li>\
     <li class="mini-profile-looking-for">Looking for: <%= looking_for %></li>\
