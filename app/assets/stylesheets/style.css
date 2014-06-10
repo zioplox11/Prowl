@@ -7,6 +7,42 @@ html {
   background-color: rgba(247,  243, 229  , 1)
 }
 
+.mini-profile-container{
+  position: relative;
+  display: inline-block;
+  width: 33.3%;
+  height: 100px;
+}
+
+.mini_profile_photo{
+  width: 90%;
+  vertical-align: top;
+}
+
+.mini_profile_user_name{
+
+}
+
+.mini_profile_age{
+
+}
+
+.mini_profile_borough{
+
+}
+
+.mini_profile_looking_for{
+
+}
+
+.mini_profile{
+
+}
+
+.mini_member_since{
+
+}
+
 .selected_interests_list{
   margin-bottom: 20px;
 }

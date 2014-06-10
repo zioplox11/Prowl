@@ -8,6 +8,8 @@ var User, user, currentUser;
 var ProfileView, profileView, MiniProfileList, miniProfileList, miniProfile, miniProfiles, miniProfilesView;
 var router;
 
+
+
 var AppRouter = Backbone.Router.extend({
 
   initialize: function(){
@@ -42,6 +44,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyMessages: function(id) {
+    router = this;
+    $('#main_view').empty;
     inbox.fetch().complete(function(){
       inboxView.render();
       router.showNewView(inboxView);
@@ -49,9 +53,10 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewMyProfile: function(id) {
-    var router = this;
+    router = this;
+    $('#main_view').empty;
     currentUser.fetch().complete(function(){
-      router.showNewView(profileView)
+      router.showNewView(profileView);
     });
   },
 
@@ -68,6 +73,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   localProfiles: function(lat, long) {
+    router = this;
+    $('#main_view').empty;
     miniProfileList.fetch().complete(function(){
       miniProfilesView.renderProfilesView();
       router.showNewView(miniProfilesView);

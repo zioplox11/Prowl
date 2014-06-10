@@ -72,7 +72,7 @@ $(function(){
 
 MiniProfilesView = Backbone.View.extend({
 
-    el: $('#main_profile'),
+    el: $('#mini_profile'),
 
     initialize: function(){
         this.renderProfilesView();

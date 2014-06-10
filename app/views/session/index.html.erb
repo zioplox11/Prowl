@@ -3,8 +3,8 @@
   $(function(){
     currentUser = new User({id: '<%= current_user.id %>'});
     currentUser.fetch().complete(function(){
-      profileView = new ProfileView({model: currentUser});
-    });
+    profileView = new ProfileView({model: currentUser});
+  });
   });
 </script>
 
